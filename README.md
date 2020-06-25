@@ -5,7 +5,8 @@
 ## About / Synopsis
 
 * This mkreadme script has been developed to generate a readme file for NEMO configurations on version 3 and version 4.
-* Project status: working/prototype
+* Project status: prototype
+* Currently being testing
 
 ### Features
 
