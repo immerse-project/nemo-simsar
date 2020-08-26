@@ -19,7 +19,7 @@ While the first two components define a certain "**configuration**", the latter 
 
 The recipes and the tools in this project allows users to create a package containing all the necessary information in order to share it with other users intending to reproduce the simulation or to start from this simulation with their own settings.  See also the documentation in the `doc/` folder for more details.
 
-![simsar_ProcedureOverview](/docs/img/simsar_ProcedureOverview.png)
+<img src="docs/img/simsar_ProcedureOverview.png" alt="simsar_ProcedureOverview"  />
 
 
 
@@ -30,7 +30,7 @@ The recipes and the tools in this project allows users to create a package conta
 
 ## 2. Requirements
 
-The user has to meet the following pre-requisits before running a tool or following a recipe from this project:
+Assuming you're working on a *nix like system you have to meet the following pre-requisits before running a tool or following a recipe from this project:
 
 * A working NEMO framework (see [nemo-ocean.eu](https://www.nemo-ocean.eu)) 
 * A NEMO configuration + experiment details (=simulation) to share
