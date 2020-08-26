@@ -1,7 +1,3 @@
----
-typora-root-url: .
----
-
 # nemo-simsar
 
 Document your NEMO ocean model simulations and share them with others using git remote repositories
