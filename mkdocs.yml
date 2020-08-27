@@ -1,0 +1,84 @@
+# Project
+site_name: nemo-simsar
+# site_url: https://
+site_author: Markus Scheinert and Lucienne Micallef
+site_description: >-
+  Document and share your NEMO ocean model simulation
+
+# Repository
+repo_name: nemo-simsar on GitHub
+repo_url: https://github.com/immerse-project/nemo-simsar
+edit_uri: ""
+
+# Copyright
+copyright: Copyright &copy; 2020 Markus Scheinert
+
+theme:
+  name: material
+  logo: 'docs/img/simsar_logo.png'
+  palette:
+    scheme: default
+    primary: light green
+  features:
+    - tabs
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
+    favicon: simsar_logo.png
+
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist
+  - pymdownx.emoji
+  - pymdownx.tabbed
+  - toc:
+      permalink: "🔗"
+
+# Plugins
+plugins:
+    - search
+    - mkdocstrings:
+        default_handler: python
+        handlers:
+            python:
+                setup_commands:
+                - import sys
+                - sys.path.append("src")
+                rendering:
+                    show_source: false  
+        custom_templates: templates
+        watch:
+            - src/my_package
+
+
+# Navigation
+nav:
+    - 'HOME': 'index.md'
+    - 'User Guide': 
+        - 'overview.md'
+        - 'Model Input Data':
+            - 'Sharable input data': 'inputdata.md'
+            - 'The "input.def" file': 'input_def.md'
+        - 'The Simulation Package': 
+            - 'Required Meta Information': 'RequiredInfo.md'
+            - 'Create a README.md (mkReadme)': 'mkReadme.md'
+            - 'Bundle up': 'bundleup.md'
+        - 'Publish a Simulation': 
+            - 'file exchange': 'publish_cloud.md'
+            - 'git': 'publish_git.md'
+        - 'Obtain a Simulation Package': 
+            'file exchange': 'getviacloud.md'
+            'git': 'getviagit.md'
+            'HTML (git pages)': 'getvianemo.md'
+            'others': 'getothers.md'
+    - 'API Reference':
+        - 'api-mkreadme.md'
+
+
+#pages:
+    #- 'notes.md'

@@ -1,12 +1,8 @@
-# nemo-simsar
+# INTRODUCTION
 
-*Document your NEMO ocean model simulations and share them with others using git remote repositories.*
+**Document and share your NEMO ocean model simulations using remote git repositories**
 
-<img src="docs/img/simsar_ProcedureOverview.png" alt="simsar_ProcedureOverview"  />
-
-This project is part of the [IMMERSE Project](http://immerse-ocean.eu/) funded by the EC.
-
------
+This project is part of the EC funded **IMMERSE** project ([immerse-ocean.eu](http://immerse-ocean.eu/))
 
 ## 1. Description
 
@@ -19,9 +15,11 @@ Ocean model simulations that are based on the NEMO ocean modelling framework ([n
 
 While the first two components define a certain "**configuration**", the latter two  provide the details for a specific **experiment** with the said configuration. Both together define a **simulation**.
 
-<img src="docs/img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage"  />
+<img src="img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage"  />
 
 The recipes and the tools in this project allows users to create a package containing all the necessary information in order to share it with other users intending to reproduce the simulation or to start from this simulation with their own settings.  See also the documentation in the `doc/` folder for more details.
+
+<img src="img/simsar_ProcedureOverview.png" alt="simsar_ProcedureOverview"  />
 
 
 
