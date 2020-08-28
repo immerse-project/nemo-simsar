@@ -1,0 +1,573 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Document and share your NEMO ocean model simulation" name="description"/>
+<link href="http://mscheinert.github.io/simsar/INDEX.html" rel="canonical"/>
+<meta content="Markus Scheinert and Lucienne Micallef" name="author"/>
+<link href="docs/img/simsar_logo.ico" rel="shortcut icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-5.5.8" name="generator"/>
+<title>INTRODUCTION - nemo-simsar</title>
+<link href="assets/stylesheets/main.01afc2df.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.83bccb1f.min.css" rel="stylesheet"/>
+<meta content="#8bc34b" name="theme-color"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+<link href="extra.css" rel="stylesheet"/>
+</head>
+<body data-md-color-accent="deep-orange" data-md-color-primary="light-green" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#introduction">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header-nav md-grid">
+<a aria-label="nemo-simsar" class="md-header-nav__button md-logo" href="http://mscheinert.github.io/simsar" title="nemo-simsar">
+<img alt="logo" src="docs/img/simsar_logo.png"/>
+</a>
+<label class="md-header-nav__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"></path></svg>
+</label>
+<div class="md-header-nav__title" data-md-component="header-title">
+<div class="md-header-nav__ellipsis">
+<span class="md-header-nav__topic md-ellipsis">
+            nemo-simsar
+          </span>
+<span class="md-header-nav__topic md-ellipsis">
+            
+              INTRODUCTION
+            
+          </span>
+</div>
+</div>
+<label class="md-header-nav__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" data-md-state="active" name="query" placeholder="Search" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</label>
+<button aria-label="Clear" class="md-search__icon md-icon" data-md-component="search-reset" tabindex="-1" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"></path></svg>
+</button>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header-nav__source">
+<a class="md-source" href="https://github.com/immerse-project/nemo-simsar" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    nemo-simsar on GitHub
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-tabs__inner md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="index.html">
+          HOME
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="overview.html">
+          User Guide
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="api-mkreadme.html">
+          API Reference
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="nemo-simsar" class="md-nav__button md-logo" href="http://mscheinert.github.io/simsar" title="nemo-simsar">
+<img alt="logo" src="docs/img/simsar_logo.png"/>
+</a>
+    nemo-simsar
+  </label>
+<div class="md-nav__source">
+<a class="md-source" href="https://github.com/immerse-project/nemo-simsar" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    nemo-simsar on GitHub
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" id="nav-1" type="checkbox"/>
+<label class="md-nav__link" for="nav-1">
+      HOME
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="HOME" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-1">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        HOME
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="index.html" title="nemo-simsar">
+      nemo-simsar
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" id="nav-2" type="checkbox"/>
+<label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="User Guide" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-2">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        User Guide
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="overview.html" title="Introduction">
+      Introduction
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="gettingstarted.html" title="Getting Started">
+      Getting Started
+    </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" id="nav-2-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-2-3">
+      Citable Input Data
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Citable Input Data" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="nav-2-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Citable Input Data
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="inputdata.html" title="How to refer to Input Data">
+      How to refer to Input Data
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" file"="" href="input_def.html" input.def"="" title="The ">
+      The "input.def" file
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" id="nav-2-4" type="checkbox"/>
+<label class="md-nav__link" for="nav-2-4">
+      The Simulation Package
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="The Simulation Package" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="nav-2-4">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        The Simulation Package
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="RequiredInfo.html" title="Preparation">
+      Preparation
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="mkReadme.html" title="Create a README (mkReadme)">
+      Create a README (mkReadme)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="bundleup.md" title="Bundle up">
+      Bundle up
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" id="nav-2-5" type="checkbox"/>
+<label class="md-nav__link" for="nav-2-5">
+      Publish
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Publish" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="nav-2-5">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Publish
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="publish_git.html" title="via git">
+      via git
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="publish_gitpages.md" title="add static webpage (git pages)">
+      add static webpage (git pages)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="." title="Persistent Handler (DOI)">
+      Persistent Handler (DOI)
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" id="nav-2-6" type="checkbox"/>
+<label class="md-nav__link" for="nav-2-6">
+      Obtain a Simulation Package
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="Obtain a Simulation Package" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="nav-2-6">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        Obtain a Simulation Package
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="getviacloud.html" title="file exchange">
+      file exchange
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="getviagit.html" title="git">
+      git
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="getvianemo.html" title="HTML (git pages)">
+      HTML (git pages)
+    </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="getothers.html" title="others">
+      others
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" id="nav-3" type="checkbox"/>
+<label class="md-nav__link" for="nav-3">
+      API Reference
+      <span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"></path></svg>
+</span>
+</label>
+<nav aria-label="API Reference" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="nav-3">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+        API Reference
+      </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="api-mkreadme.html" title="`mkReadme`">
+      `mkReadme`
+    </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"></path></svg>
+</span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-description">
+    1. Description
+  </a>
+<nav aria-label="1. Description" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#features">
+    Features
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-requirements">
+    2. Requirements
+  </a>
+<nav aria-label="2. Requirements" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#terms-of-use-license-agreement">
+    Terms of Use &amp; License Agreement
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-download-installation">
+    3. Download &amp; Installation
+  </a>
+<nav aria-label="3. Download &amp; Installation" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#updates">
+    Updates
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-usage">
+    4. Usage
+  </a>
+<nav aria-label="4. Usage" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#example">
+    Example
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#testing">
+    Testing
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5-documentation">
+    5. Documentation
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6-support">
+    6. Support
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content">
+<article class="md-content__inner md-typeset">
+<h1 id="introduction">INTRODUCTION<a class="headerlink" href="#introduction" title="Permanent link">🔗</a></h1>
+<p><strong>Document and share your NEMO ocean model simulations using remote git repositories</strong></p>
+<p>This project is part of the EC funded <strong>IMMERSE</strong> project (<a href="http://immerse-ocean.eu/">immerse-ocean.eu</a>)</p>
+<h2 id="1-description">1. Description<a class="headerlink" href="#1-description" title="Permanent link">🔗</a></h2>
+<p>Ocean model simulations that are based on the NEMO ocean modelling framework (<a href="https://www.nemo-ocean.eu">nemo-ocean.eu</a>) consists of several components:</p>
+<ul>
+<li>The source code provided by NEMO and by the user (FORTRAN code)</li>
+<li>Build settings (model components, compiler options)</li>
+<li>Runtime parameters (FORTRAN and XML namelists)</li>
+<li>Input data fIles (e.g. grid, bathymetry, boundary conditions, initialisation)</li>
+</ul>
+<p>While the first two components define a certain "<strong>configuration</strong>", the latter two  provide the details for a specific <strong>experiment</strong> with the said configuration. Both together define a <strong>simulation</strong>.</p>
+<p><img alt="simsar_SimulationPackage" src="img/simsar_SimulationPackage.png"/></p>
+<p>The recipes and the tools in this project allows users to create a package containing all the necessary information in order to share it with other users intending to reproduce the simulation or to start from this simulation with their own settings.  See also the documentation in the <code>doc/</code> folder for more details.</p>
+<p><img alt="simsar_ProcedureOverview" src="img/simsar_ProcedureOverview.png"/></p>
+<h4 id="features">Features<a class="headerlink" href="#features" title="Permanent link">🔗</a></h4>
+<ul>
+<li>Interactive script in order to create a README file (Markdown format) giving an overview of the simulation's settings and providing instructions how to include it in your own NEMO framework.</li>
+<li>Recipe to extract and upload a configuration from inside the NEMO framework into a remote git repository</li>
+</ul>
+<h2 id="2-requirements">2. Requirements<a class="headerlink" href="#2-requirements" title="Permanent link">🔗</a></h2>
+<p>Assuming you're working on a *nix like system you have to meet the following pre-requisits before running a tool or following a recipe from this project:</p>
+<ul>
+<li>A working NEMO framework (see <a href="https://www.nemo-ocean.eu">nemo-ocean.eu</a>) </li>
+<li>A NEMO configuration + experiment details (=simulation) to share</li>
+<li>A definition list (<code>input.def</code>) containing names and remote sources of the citable, version-controlled input data files. See <code>doc/inputfiles.md</code> for details</li>
+<li><strong>git</strong> client is installed and working</li>
+<li>access to a remote <strong>git server</strong></li>
+<li><strong>Python3</strong> including these standard libraries: </li>
+<li>os</li>
+<li>re</li>
+<li>subprocess</li>
+<li>pathlib</li>
+<li>textwrap</li>
+<li>The following additional <strong>Python3 packages</strong> must be installed (e.g. with <code>pip</code> or <code>conda</code> or  through your favorite package manager):</li>
+<li>svn (<a href="https://pypi.org/project/svn/">pip</a>)</li>
+<li>wget (<a href="https://pypi.org/project/wget/">pip</a>)</li>
+<li>GitPython (<a href="https://pypi.org/project/GitPython/">pip</a>)</li>
+<li>Jinja2 (<a href="https://pypi.org/project/Jinja2/">pip</a>)</li>
+<li>pycurl (<a href="https://pypi.org/project/pycurl/">pip</a>)</li>
+<li>A local copy of this git project.</li>
+</ul>
+<h4 id="terms-of-use-license-agreement">Terms of Use &amp; License Agreement<a class="headerlink" href="#terms-of-use-license-agreement" title="Permanent link">🔗</a></h4>
+<p>Before using this software, the user must agree to the license given by the <a href="LICENSE">LICENSE</a> file in the project's repository. This software can be used free of charge. </p>
+<h2 id="3-download-installation">3. Download &amp; Installation<a class="headerlink" href="#3-download-installation" title="Permanent link">🔗</a></h2>
+<p>First make sure that the required Python3 packages are installed on your local machine. If you're using <strong>pip</strong> for example, you can run the following command:</p>
+<div class="highlight"><pre><span></span><code>pip3 install svn wget GitPython Jinja2 pycurl 
+</code></pre></div>
+<p>Then change to the directory where you want to keep your local copy of this project and clone it:</p>
+<div class="highlight"><pre><span></span><code>git clone git@github.com:immerse-project/nemo-simsar.git
+</code></pre></div>
+<h4 id="updates">Updates<a class="headerlink" href="#updates" title="Permanent link">🔗</a></h4>
+<p>Go into your local copy of the nemo-simsar repository and run <code>git fetch</code> and review any changes before merging manually.</p>
+<div class="highlight"><pre><span></span><code>git fetch
+</code></pre></div>
+<p>Or, if you're inclined to merge any changes immediately into your local repository, just run a <code>git pull</code>:</p>
+<div class="highlight"><pre><span></span><code>git pull
+</code></pre></div>
+<h2 id="4-usage">4. Usage<a class="headerlink" href="#4-usage" title="Permanent link">🔗</a></h2>
+<p><em><code>Short notes on how to start/use the program and the command syntax (if necessary)</code></em></p>
+<p>The most important tool is the <strong>mkReadme</strong> script. Make sure, the full path to <code>nemo-simsar/bin</code> is part of your <code>$PATH</code> environment variable:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Bash-like:</span>
+<span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/path/to/nemo-simsar/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+
+<span class="c1"># or csh:</span>
+setenv PATH /path/to/nemo-simsar/bin:<span class="si">${</span><span class="nv">PATH</span><span class="si">}</span>
+</code></pre></div>
+<p>Before you can run the mkReadme tool, make sure, that the following information is available:</p>
+<blockquote>
+<ul>
+<li>The <strong>NEMO code repository</strong>, <strong>branch identifier</strong> and <strong>revision number</strong> the simulation's code is based on</li>
+<li>An <code>input.def</code> file listing file names of the input files used by NEMO and their remote sources as well as references (see the <strong><code>input.def</code> template</strong> in the <code>doc/</code> folder)</li>
+<li></li>
+</ul>
+</blockquote>
+<p>Then go into your configuration's folder and run <code>mkReadme</code></p>
+<div class="highlight"><pre><span></span><code>mkReadme
+</code></pre></div>
+<p><strong><em>NOTE</em></strong>: If the <code>nemo-simsar/bin</code> is not part of your <code>$PATH</code> variable, run the script using the full path, something like:</p>
+<div class="highlight"><pre><span></span><code>/home/myname/nemo-simsar/bin/mkReadme
+</code></pre></div>
+<p>The script does not accept any arguments yet (May change in the future).</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">🔗</a></h4>
+<p><em><code>Provide one ore more examples</code></em></p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Example 1:</span>
+
+<span class="nb">cd</span> <span class="nv">$HOME</span>/NEMO/release-4.0/cfg/CrazyWhirl
+mkReadme
+</code></pre></div>
+<h4 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">🔗</a></h4>
+<p>Currently, there is no testing implemented.</p>
+<h2 id="5-documentation">5. Documentation<a class="headerlink" href="#5-documentation" title="Permanent link">🔗</a></h2>
+<p>See the files in the <code>doc/</code> sub-folder of this project.</p>
+<h2 id="6-support">6. Support<a class="headerlink" href="#6-support" title="Permanent link">🔗</a></h2>
+<p>There is only a limited support during the introduction phase of this package. Please, use the issue reporting on GitHub.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-footer-copyright">
+<div class="md-footer-copyright__highlight">
+            Copyright © 2020 Markus Scheinert
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+          Material for MkDocs
+        </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script src="assets/javascripts/vendor.df0def68.min.js"></script>
+<script src="assets/javascripts/bundle.ba57d267.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+<script>
+        app = initialize({
+          base: ".",
+          features: ["tabs", "search.highlight"],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.fae956e7.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+</body>
+</html>

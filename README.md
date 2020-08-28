@@ -1,4 +1,4 @@
-# nemo-simsar
+# **nemo-simsar**
 
 *Document your NEMO ocean model simulations and share them with others using git remote repositories.*
 
@@ -38,7 +38,7 @@ Assuming you're working on a *nix like system you have to meet the following pre
 * A NEMO **simulation** to share (=configuration + experiment details)
 * **git** client is installed and working
 * access to a remote **git server**
-* **Python3** including thes standard libraries (os, re, subprocess, pathlib, textwrap)
+* **Python3** including these standard libraries (os, re, subprocess, pathlib, textwrap)
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
     * **svn** ([pip](https://pypi.org/project/svn/))
     * **wget** ([pip](https://pypi.org/project/wget/))

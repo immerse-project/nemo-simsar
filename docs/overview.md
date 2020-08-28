@@ -40,7 +40,7 @@ NEMO is shipped with several [build-in configurations](https://forge.ipsl.jussie
 
 ## NEMO-SIMSAR
 
-**NEMO-SIMSAR** aims to fill the gap of documenting NEMO simulations and introduces a consistent concept and provides recipes and tools.
+**NEMO-SIMSAR** aims to fill the gap of documenting NEMO simulations and introduces a consistent concept and provides recipes and tools for the user.
 
 The concept behind NEMO-SIMSAR does not only emphasize [univocally citable input data sets](#) but also introduces a more comprehensive definition of a [simulation package](#) and its components than the original concept of configurations and experiments does in NEMO. The preferred repository system for [publishing your simulation](#) with SIMSAR is git (other platforms and protocols might be applicable, too). 
 
