@@ -2,7 +2,7 @@
 
 *Document your NEMO ocean model simulations and share them with others using git remote repositories.*
 
-<img src="docs/img/simsar_ProcedureOverview.png" alt="simsar_ProcedureOverview"  />
+<!--//<img src="docs/img/simsar_ProcedureOverview.png" alt="simsar_ProcedureOverview"  />//-->
 
 This project is part of the [IMMERSE Project](http://immerse-ocean.eu/) funded by the EC.
 
@@ -19,7 +19,7 @@ Ocean model simulations that are based on the NEMO ocean modelling framework ([n
 
 While the first two components define a certain "**configuration**", the latter two  provide the details for a specific **experiment** with the said configuration. Both together define a **simulation**.
 
-<img src="docs/img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage"  />
+<!--//<img src="docs/img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage"  />//-->
 
 The recipes and the tools in this project allows users to create a package containing all the necessary information in order to share it with other users intending to reproduce the simulation or to start from this simulation with their own settings.  See also the documentation in the `doc/` folder for more details.
 
@@ -34,23 +34,17 @@ The recipes and the tools in this project allows users to create a package conta
 
 Assuming you're working on a *nix like system you have to meet the following pre-requisits before running a tool or following a recipe from this project:
 
-* A working NEMO framework (see [nemo-ocean.eu](https://www.nemo-ocean.eu)) 
-* A NEMO configuration + experiment details (=simulation) to share
-* A definition list (`input.def`) containing names and remote sources of the citable, version-controlled input data files. See `doc/inputfiles.md` for details
+* A working **NEMO framework** (see [nemo-ocean.eu](https://www.nemo-ocean.eu)) 
+* A NEMO **simulation** to share (=configuration + experiment details)
 * **git** client is installed and working
 * access to a remote **git server**
-* **Python3** including these standard libraries: 
-    * os
-    * re
-    * subprocess
-    * pathlib
-    * textwrap
+* **Python3** including thes standard libraries (os, re, subprocess, pathlib, textwrap)
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
-    * svn ([pip](https://pypi.org/project/svn/))
-    * wget ([pip](https://pypi.org/project/wget/))
-    * GitPython ([pip](https://pypi.org/project/GitPython/))
-    * Jinja2 ([pip](https://pypi.org/project/Jinja2/))
-    * pycurl ([pip](https://pypi.org/project/pycurl/))
+    * **svn** ([pip](https://pypi.org/project/svn/))
+    * **wget** ([pip](https://pypi.org/project/wget/))
+    * **GitPython** ([pip](https://pypi.org/project/GitPython/))
+    * **Jinja2** ([pip](https://pypi.org/project/Jinja2/))
+    * **pycurl** ([pip](https://pypi.org/project/pycurl/))
 * A local copy of this git project.
 
 #### Terms of Use & License Agreement
