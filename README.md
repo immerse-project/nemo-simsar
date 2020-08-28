@@ -40,17 +40,17 @@ Assuming you're working on a *nix like system you have to meet the following pre
 * **git** client is installed and working
 * access to a remote **git server**
 * **Python3** including these standard libraries: 
-  * os
-  * re
-  * subprocess
-  * pathlib
-  * textwrap
+    * os
+    * re
+    * subprocess
+    * pathlib
+    * textwrap
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
-  * svn ([pip](https://pypi.org/project/svn/))
-  * wget ([pip](https://pypi.org/project/wget/))
-  * GitPython ([pip](https://pypi.org/project/GitPython/))
-  * Jinja2 ([pip](https://pypi.org/project/Jinja2/))
-  * pycurl ([pip](https://pypi.org/project/pycurl/))
+    * svn ([pip](https://pypi.org/project/svn/))
+    * wget ([pip](https://pypi.org/project/wget/))
+    * GitPython ([pip](https://pypi.org/project/GitPython/))
+    * Jinja2 ([pip](https://pypi.org/project/Jinja2/))
+    * pycurl ([pip](https://pypi.org/project/pycurl/))
 * A local copy of this git project.
 
 #### Terms of Use & License Agreement

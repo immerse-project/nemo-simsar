@@ -1,0 +1,13 @@
+.center {
+    display: inline-block !important;
+    margin: 0 auto;
+}
+
+.frame {
+    border: solid 1px #888;
+}
+
+.imgshadow {
+    box-shadow: 2px 2px 10px #aaa;
+    padding:10px;
+}
