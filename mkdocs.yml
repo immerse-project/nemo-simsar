@@ -78,13 +78,13 @@ nav:
             - 'How to refer to Input Data': 'inputdata.md'
             - 'The "input.def" file': 'input_def.md'
         - 'The Simulation Package': 
-            - 'Preparation': 'RequiredInfo.md'
+            - 'Simulation Meta Data': ''
             - 'Create a README (mkReadme)': 'mkReadme.md'
             - 'Bundle up': 'bundleup.md'
         - 'Publish': 
-            - 'via git': 'publish_git.md'
-            - 'add static webpage (git pages)': 'publish_gitpages.md'
             - 'Persistent Handler (DOI)': ''
+            - 'publish via git': 'publish_git.md'
+            - 'add static webpage (git pages)': 'publish_gitpages.md'
         - 'Obtain a Simulation Package': 
             'file exchange': 'getviacloud.md'
             'git': 'getviagit.md'

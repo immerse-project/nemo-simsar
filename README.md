@@ -1,4 +1,6 @@
-# **nemo-simsar**
+![simsar_logo](docs/img/simsar_logo.png){: .center}
+
+# nemo-simsar
 
 *Document your NEMO ocean model simulations and share them with others using git remote repositories.*
 

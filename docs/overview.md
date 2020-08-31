@@ -16,7 +16,9 @@ The results and the conclusions of a scientific analysis are the most important 
 
 If you want to share a simulation with others you may either want to just document what you have done and provide this information to others. Or you may want to develop a configuration together with contributions from different groups.
 
-While the former can be implemented quite easily: Just put the necessary information into one archive and extract some of the meta data for a summary. The latter (collaboration) needs a more complex solution: You'll have to make sure, that the development is version controlled and each contributor can be identified (not only to track bugs but also to acknowledge and to give credit for their contributions).
+While the former can be implemented quite easily: Just put the necessary information into one archive and extract some of the meta data for a summary; no further contribution intended. 
+
+The latter (collaboration) needs a more complex solution: You'll have to make sure, that the development is version controlled and each contributor can be identified (not only to track bugs but also to acknowledge and to give credit for their contributions).
 
 
 
@@ -40,14 +42,14 @@ NEMO is shipped with several [build-in configurations](https://forge.ipsl.jussie
 
 ## NEMO-SIMSAR
 
-**NEMO-SIMSAR** aims to fill the gap of documenting NEMO simulations and introduces a consistent concept and provides recipes and tools for the user.
+**NEMO-SIMSAR** aims to fill the gap of documenting NEMO simulations created by users and introduces a consistent concept and provides recipes and tools for the user.
 
-The concept behind NEMO-SIMSAR does not only emphasize [univocally citable input data sets](#) but also introduces a more comprehensive definition of a [simulation package](#) and its components than the original concept of configurations and experiments does in NEMO. The preferred repository system for [publishing your simulation](#) with SIMSAR is git (other platforms and protocols might be applicable, too). 
+The concept behind NEMO-SIMSAR does not only emphasize [univocally citable input data sets](#) but also introduces a more comprehensive definition of a [simulation package](#) and its components than the original concept of configurations and experiments stipulates. The preferred repository system for [publishing your simulation](#) with SIMSAR is git (but other platforms and protocols might be applicable, too). 
 
 The figure below illustrates the workflow: 
 
 1. User A (Simulation Manager X) has a copy of the NEMO framework repository containing several experiments under different configurations
-2. User A creates one ore more Simulation Packages and publishes them each in separate git project. Creating additional static pages from the git project in order to support the `makenemo -u` switch is optional.
+2. User A creates one ore more Simulation Packages and publishes them each in a separate git project. User A also has the option to create additional static pages from the git project in order to support the `makenemo -u`.
 3. User B, also having a copy of the NEMO framework repository, clones one or more of these git projects to work with. In this case, User B could also contribute to a simulation package by uploading their own version and submitting a merge request to the respective git project.
 4. User B could also import a simulation package using the static pages version of the git project and the "unsupported configuration" switch with the build tool: `makenemo -u`. In this case no contributions could be made directly to the simulation project unless the simulation package is re-imported invoking step 3.
 5. DOIs could refer either to the git project version or the static pages version. In a two-level-access approach a DOI could refer to the static page version which in turn provides a link to the original repository.
