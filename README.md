@@ -76,17 +76,31 @@ This software can be used free of charge.
 
 ## 3. Download & Installation
 
-First make sure that the required Python3 packages are installed on your local machine. If you're using **pip** for example, you can run the following command:
-
-```
-pip3 install svn wget GitPython Jinja2 pycurl 
-```
-
-Then change to the directory where you want to keep your local copy of this project and clone it:
+Then change to the directory where you want to keep your local copy of this project, e.g. your `$HOME` directory and clone it:
 
 ```bash
 git clone git@github.com:immerse-project/nemo-simsar.git
 ```
+
+In order to use the tools from the SIMSAR package, make sure, the full path to `nemo-simsar/bin` is part of your `$PATH` environment variable:
+
+!!! example "EXAMPLE: Prepending to <code>$PATH</code>"
+
+    === "bash"
+    
+        ``` bash
+        # bash-like shell:
+        
+        export PATH=/path/to/nemo-simsar/bin:${PATH}
+        ```
+    
+    === "csh"
+    
+        ``` csh
+        # or csh:
+        
+        setenv PATH /path/to/nemo-simsar/bin:${PATH}
+        ```
 
 
 
@@ -109,26 +123,6 @@ git pull
 
 
 ## 4. Usage
-
-In order to use the tools from the SIMSAR package, make sure, the full path to `nemo-simsar/bin` is part of your `$PATH` environment variable:
-
-!!! example "EXAMPLE: Prepending to <code>$PATH</code>"
-
-    === "bash"
-    
-        ``` bash
-        # bash-like shell:
-        
-        export PATH=/path/to/nemo-simsar/bin:${PATH}
-        ```
-    
-    === "csh"
-    
-        ``` csh
-        # or csh:
-        
-        setenv PATH /path/to/nemo-simsar/bin:${PATH}
-        ```
 
 Please read the **User Guide** for further instructions how to use SIMSAR since it does not only consist of one single program but is a collection of recipes with a few tools to assist the user. The **[Introduction](introduction.md)** tells you about the background and how to use SIMSAR. The **Getting Started** section provides step-by-step instructions. 
 
