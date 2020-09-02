@@ -9,6 +9,8 @@
 !!! success
 
 !!! question
+    * Which license?
+    * test github pages under immerse?
 
 !!! fail
 

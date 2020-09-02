@@ -43,6 +43,7 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.emoji
   - pymdownx.tabbed
+  - pymdownx.critic
   - toc:
       permalink: "🔗"
   - pymdownx.emoji:
@@ -72,7 +73,7 @@ nav:
     - 'HOME': 
         - 'index.md'
     - 'User Guide': 
-        - 'overview.md'
+        - 'introduction.md'
         - 'gettingstarted.md'
         - 'Citable Input Data':
             - 'How to refer to Input Data': 'inputdata.md'
@@ -90,7 +91,7 @@ nav:
             'git': 'getviagit.md'
             'HTML (git pages)': 'getvianemo.md'
             'others': 'getothers.md'
-    - 'API Reference':
+    - 'Reference':
         - 'api-mkreadme.md'
     #- '🡽 IMMERSE Project':
     #    - 'https://immerse-ocean.eu'

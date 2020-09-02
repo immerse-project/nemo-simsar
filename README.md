@@ -39,19 +39,40 @@ Assuming you're working on a *nix like system you have to meet the following pre
 * A working **NEMO framework** (see [nemo-ocean.eu](https://www.nemo-ocean.eu)) 
 * A NEMO **simulation** to share (=configuration + experiment details)
 * **git** client is installed and working
+* A local copy of the **nemo-simsar** git project.
 * access to a remote **git server**
-* **Python3** including these standard libraries (os, re, subprocess, pathlib, textwrap)
+* **Python3** including these standard libraries: `os`, `re`, `subprocess`, `pathlib`, `textwrap`
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
-    * **svn** ([pip](https://pypi.org/project/svn/))
-    * **wget** ([pip](https://pypi.org/project/wget/))
-    * **GitPython** ([pip](https://pypi.org/project/GitPython/))
-    * **Jinja2** ([pip](https://pypi.org/project/Jinja2/))
-    * **pycurl** ([pip](https://pypi.org/project/pycurl/))
-* A local copy of this git project.
+    * **svn** ([pypi](https://pypi.org/project/svn/))
+    * **wget** ([pypi](https://pypi.org/project/wget/))
+    * **GitPython** ([pypi](https://pypi.org/project/GitPython/))
+    * **Jinja2** ([pypi](https://pypi.org/project/Jinja2/))
+    * **pycurl** ([pypi](https://pypi.org/project/pycurl/))
+
+    !!! example "EXAMPLE: Install required Python3 packages"
+
+        === "pip"
+        
+            ```
+            pip3 install svn wget GitPython Jinja2 pycurl 
+            ```
+        
+        === "conda"
+            Using the [conda-forge channel](https://conda-forge.org/):
+            
+            ```
+            conda install --channel conda-forge python=3 svn python-wget gitpython jinja2 pycurl 
+            ```
+
+
 
 #### Terms of Use & License Agreement
 
-Before using this software, the user must agree to the license given by the [LICENSE](LICENSE) file in the project's repository. This software can be used free of charge. 
+Before using this software, the user must agree to the license given by the [LICENSE](LICENSE) file in the project's repository. 
+
+This software can be used free of charge. 
+
+
 
 ## 3. Download & Installation
 
@@ -71,13 +92,13 @@ git clone git@github.com:immerse-project/nemo-simsar.git
 
 #### Updates
 
-Go into your local copy of the nemo-simsar repository and run `git fetch` and review any changes before merging manually.
+Go into your local copy of the nemo-simsar repository and run `git fetch` and review any changes before merging manually. See the git documentation on [git-fetch](https://git-scm.com/docs/git-fetch){:target="_blank"} for details.
 
 ```
 git fetch
 ```
 
-Or, if you're inclined to merge any changes immediately into your local repository, just run a `git pull`:
+Or, if you're inclined to merge any changes immediately into your local repository, just run a `git pull` (see [git-pull](https://git-scm.com/docs/git-pull){:target="_blank"} manual):
 
 ```
 git pull
@@ -89,49 +110,27 @@ git pull
 
 ## 4. Usage
 
-*`Short notes on how to start/use the program and the command syntax (if necessary)`*
+In order to use the tools from the SIMSAR package, make sure, the full path to `nemo-simsar/bin` is part of your `$PATH` environment variable:
 
-The most important tool is the **mkReadme** script. Make sure, the full path to `nemo-simsar/bin` is part of your `$PATH` environment variable:
+!!! example "EXAMPLE: Prepending to <code>$PATH</code>"
 
-```bash
-# Bash-like:
-export PATH=/path/to/nemo-simsar/bin:${PATH}
+    === "bash"
+    
+        ``` bash
+        # bash-like shell:
+        
+        export PATH=/path/to/nemo-simsar/bin:${PATH}
+        ```
+    
+    === "csh"
+    
+        ``` csh
+        # or csh:
+        
+        setenv PATH /path/to/nemo-simsar/bin:${PATH}
+        ```
 
-# or csh:
-setenv PATH /path/to/nemo-simsar/bin:${PATH}
-```
-
-Before you can run the mkReadme tool, make sure, that the following information is available:
-
-> * The **NEMO code repository**, **branch identifier** and **revision number** the simulation's code is based on
-> * An `input.def` file listing file names of the input files used by NEMO and their remote sources as well as references (see the **`input.def` template** in the `doc/` folder)
-> * 
-
-Then go into your configuration's folder and run `mkReadme`
-
-```bash
-mkReadme
-```
-
-***NOTE***: If the `nemo-simsar/bin` is not part of your `$PATH` variable, run the script using the full path, something like:
-
-```
-/home/myname/nemo-simsar/bin/mkReadme
-```
-
-The script does not accept any arguments yet (May change in the future).
-
-#### Example
-
-*`Provide one ore more examples`*
-
-```bash
-# Example 1:
-
-cd $HOME/NEMO/release-4.0/cfg/CrazyWhirl
-mkReadme
-
-```
+Please read the **User Guide** for further instructions how to use SIMSAR since it does not only consist of one single program but is a collection of recipes with a few tools to assist the user. The **[Introduction](introduction.md)** tells you about the background and how to use SIMSAR. The **Getting Started** section provides step-by-step instructions. 
 
 
 
@@ -143,7 +142,7 @@ Currently, there is no testing implemented.
 
 ## 5. Documentation
 
-See the files in the `doc/` sub-folder of this project.
+See the User Guide in the `docs/` folder of this project or visit the webpage [nemo-simsar](https://mscheinert.github.io/simsar).
 
 
 
@@ -153,3 +152,6 @@ There is only a limited support during the introduction phase of this package. P
 
 
 
+## 7. Contributing
+
+Please use the collaboration tools provided for the GitHub project [IMMERSE-project/nemo-simsar](https://github.com/immerse-project/nemo-simsar).

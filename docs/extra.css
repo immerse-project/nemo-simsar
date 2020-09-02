@@ -11,3 +11,8 @@
     box-shadow: 2px 2px 10px #aaa;
     padding:10px;
 }
+
+a[target="_blank"]::before {
+    /* border: solid 1px red; */
+    content: "🡽 ";
+}

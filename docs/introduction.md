@@ -2,7 +2,7 @@
 
 ## Modeling the Ocean
 
-Ocean models of today are highly complex computer programs based on mathematical formulations of physical, chemical and biological interrelations. They are essential tools to investigate processes in the ocean from large scales to micro-structures which effect the climate physics, environmental conditions, economic developments and finally the human well-being. They can help to understand processes that lead to events in the past as well as to current changes. And it places an instrument to our disposal to look into the future using projections and forecasts.
+Ocean models of today are highly complex computer programs based on mathematical formulations of physical, chemical and biological interrelations. They are essential tools to investigate processes in the ocean from large scales to micro-structures which effect the climate physics, environmental conditions, economic developments and ultimately the human well-being. They can help to understand processes that lead to events in the past as well as to present changes. And it places an instrument to our disposal to look into the future using projections and forecasts.
 
 
 
@@ -65,5 +65,4 @@ The figure below illustrates the workflow:
 
 
 <center>[Getting Started](gettingstarted.html){: .md-button .md-button--primary }</center>
-
 &nbsp;  
