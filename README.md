@@ -14,12 +14,12 @@ This project is part of the [IMMERSE Project](http://immerse-ocean.eu/) funded b
 
 Ocean model simulations that are based on the NEMO ocean modelling framework ([nemo-ocean.eu](https://www.nemo-ocean.eu)) consists of several components:
 
-* The source code provided by NEMO and by the user (FORTRAN code)
-* Build settings (model components, compiler options)
-* Runtime parameters (FORTRAN and XML namelists)
-* Input data fIles (e.g. grid, bathymetry, boundary conditions, initialisation)
+* The ***source code*** provided by NEMO and by the user (FORTRAN code)
+* ***Build settings*** (model components, compiler options)
+* Runtime ***parameters*** (FORTRAN and XML namelists)
+* ***Input data*** fIles (e.g. grid, bathymetry, boundary conditions, initialisation)
 
-While the first two components define a certain "**configuration**", the latter two  provide the details for a specific **experiment** with the said configuration. Both together define a **simulation**.
+While the first two components define a certain "**configuration**", the latter two  provide the details for a specific **experiment** with the said configuration. Both together form a **simulation**.
 
 <!--//<img src="docs/img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage"  />//-->
 

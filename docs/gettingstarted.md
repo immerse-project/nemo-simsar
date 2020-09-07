@@ -32,13 +32,30 @@ Assuming the path to your copy of the NEMO repository reads `$HOME/NEMO/release-
 cd ~/NEMO/release-4.0/cfgs/My_Config/MyExp1
 ```
 
+!!! caution "check in latest revision"
+
+    It is important that when using svn or git the latest changes have been committed to the version control system:
+    
+    === "git"
+        ```
+        git add .
+        git commit -m "last checkin before creating README"
+        ```
+        
+    === "svn"
+        ```
+        svn add .
+        ```
+
+
+
 ### 1.1 List input data files
 
 First, we need a list of the **required input data files** for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the **`input.def`** file. If this file does not exists yet, **please create it**. 
 
 You'll find more information about the file format and how to create it in the "**Citable Input Data**" section of this guide or follow these buttons for further details:
 
-[How to refer to Input Data](){: .md-button  .md-button--primary style="margin:10px;"} [The "input.def" file](){: .md-button  .md-button--primary style="margin:10px;"}
+[How to refer to Input Data](inputdata.md){: .md-button  .md-button--primary style="margin:10px;"} [The "input.def" file](input_def.md){: .md-button  .md-button--primary style="margin:10px;"}
 
 !!! Danger "Important"
 	Make sure, that the sources in the `input.def` files (the URLs) are publicly accessible (or grant permissions respectively).
@@ -51,7 +68,7 @@ Meta-data is an essential part of a documentation because it summarizes the most
 
 Please, follow the button below to read about which meta information will be needed (from the "**The Simulation Package**" section):
 
-[Simulation Meta Data](){: .md-button  .md-button--primary style="margin:10px;" }  
+[Simulation Meta Data](simulation-meta.md){: .md-button  .md-button--primary style="margin:10px;" }  
 
 
 ## Step-2: Create README
@@ -60,7 +77,7 @@ The meta-information from the preparation step is now assembled in one single do
 
 There is a python script for assistance. Just run the script **mkReadme** from the SIMSAR package and follow the instructions from the user dialog. Click on the following button to read more about the process:
 
-[Create a README (mkReadme)](){: .md-button  .md-button--primary style="margin:10px;" }  
+[Create a README (mkReadme)](mkReadme.md){: .md-button  .md-button--primary style="margin:10px;" }  
 
 
 
