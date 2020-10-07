@@ -19,8 +19,7 @@ copyright: Copyright &copy; 2020 Markus Scheinert
 
 # Navigation
 nav:
-    - HOME: 
-        - index.md
+    - HOME: index.md
     - User Guide: 
         - introduction.md
         - gettingstarted.md
