@@ -55,7 +55,7 @@ First, we need a list of the **required input data files** for your simulation t
 
 You'll find more information about the file format and how to create it in the "**Citable Input Data**" section of this guide or follow these buttons for further details:
 
-[How to refer to Input Data](inputdata.md){: .md-button  .md-button--primary style="margin:10px;"} [The "input.def" file](input_def.md){: .md-button  .md-button--primary style="margin:10px;"}
+[How to refer to Input Data](inputdata.md){: .md-button  .md-button--primary style="margin:10px;"} [The "input.ini" file](input_ini.md){: .md-button  .md-button--primary style="margin:10px;"}
 
 !!! Danger "Important"
 	Make sure, that the sources in the `input.def` files (the URLs) are publicly accessible (or grant permissions respectively).

@@ -26,7 +26,7 @@ nav:
         - gettingstarted.md
         - Citable Input Data:
             - inputdata.md
-            - input_def.md
+            - input_ini.md
         - 'The Simulation Package': 
             - simulation-meta.md
             - mkReadme.md
