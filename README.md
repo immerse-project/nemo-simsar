@@ -43,25 +43,26 @@ Assuming you're working on a *nix like system you have to meet the following pre
 * access to a remote **git server**
 * **Python3** including these standard libraries: `os`, `re`, `subprocess`, `pathlib`, `textwrap`
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
-    * **svn** ([pypi](https://pypi.org/project/svn/))
-    * **wget** ([pypi](https://pypi.org/project/wget/))
-    * **GitPython** ([pypi](https://pypi.org/project/GitPython/))
-    * **Jinja2** ([pypi](https://pypi.org/project/Jinja2/))
-    * **pycurl** ([pypi](https://pypi.org/project/pycurl/))
+    * **svn** ([pypi](https://pypi.org/project/svn/) | [anaconda:main](https://anaconda.org/main/svn))
+    * **wget** ([pypi](https://pypi.org/project/wget/)| [anaconda:main](https://anaconda.org/main/wget))
+    * **GitPython** ([pypi](https://pypi.org/project/GitPython/) | [anaconda:main](https://anaconda.org/main/gitpython))
+    * **Jinja2** ([pypi](https://pypi.org/project/Jinja2/) | [anaconda:main](https://anaconda.org/main))
+    * **pycurl** ([pypi](https://pypi.org/project/pycurl/) | [anaconda:main](https://anaconda.org/main/pycurl))
+    * **netcdf4**([pypi](https://pypi.org/project/netCDF4/) | [anaconda:main](https://anaconda.org/main/netcdf4))
 
     !!! example "EXAMPLE: Install required Python3 packages"
 
         === "pip"
         
             ```
-            pip3 install svn wget GitPython Jinja2 pycurl 
+            pip3 install svn wget GitPython Jinja2 pycurl netCDF4
             ```
         
         === "conda"
             Using the [conda-forge channel](https://conda-forge.org/):
             
             ```
-            conda install --channel conda-forge python=3 svn python-wget gitpython jinja2 pycurl 
+            conda install --channel conda-forge python=3 svn wget gitpython jinja2 pycurl netcdf4
             ```
 
 

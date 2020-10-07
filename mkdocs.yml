@@ -61,7 +61,7 @@ theme:
     primary: light green
     accent: deep orange
   features:
-    - tabs
+    - navigation.tabs
     - search.highlight
   icon:
     repo: fontawesome/brands/github
