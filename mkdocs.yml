@@ -1,0 +1,115 @@
+# Project
+site_name: nemo-simsar
+#site_url: http://127.0.0.1:8000
+site_url: http://immerse-project.github.io/simsar
+site_author: Markus Scheinert and Lucienne Micallef
+site_description: >-
+  Document and share your NEMO ocean model simulation
+
+# Repository
+repo_name: nemo-simsar on GitHub
+repo_url: https://github.com/immerse-project/nemo-simsar
+edit_uri: ""
+use_directory_urls: false
+
+# Copyright
+copyright: Copyright &copy; 2020 Markus Scheinert
+
+
+
+# Navigation
+nav:
+    - HOME: index.md
+    - User Guide: 
+        - introduction.md
+        - gettingstarted.md
+        - Citable Input Data:
+            - inputdata.md
+            - input_ini.md
+        - 'The Simulation Package': 
+            - simulation-meta.md
+            - mkReadme.md
+            - bundleup.md
+        - 'Publish': 
+            - publish_general.md
+            - publish_pid.md
+            - 'publish via git': 'publish_git.md'
+            - 'publish_gitpages.md'
+        - 'Obtain a Simulation Package': 
+            #'file exchange': 'getviacloud.md'
+            'git': 'getviagit.md'
+            #'HTML (git pages)': 'getvianemo.md'
+            #'others': 'getothers.md'
+    #- 'Contact': 
+    #    - contact.md
+    - Disclaimer & Privacy:
+        - disclaimerprivacy.md
+    - '🡽 IMMERSE Project':
+        - 'https://immerse-ocean.eu'
+    - '🡽 NEMO-OCEAN':
+        - 'https://www.nemo-ocean.eu'
+
+
+
+
+
+# MkDocs Theme
+theme:
+  name: material
+  logo: 'docs/img/simsar_logo.png'
+  favicon: 'docs/img/simsar_logo.ico'
+  palette:
+    scheme: default
+    primary: light green
+    accent: deep orange
+  features:
+    - navigation.tabs
+    - search.highlight
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+    - extra.css
+    
+# Extensions
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - codehilite:
+      guess_lang: false
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.emoji
+  - pymdownx.tabbed
+  - pymdownx.critic
+  - pymdownx.keys
+  - toc:
+      permalink: "🔗"
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+
+# Plugins
+plugins:
+    - search
+    - mkdocstrings:
+        default_handler: python
+        handlers:
+            python:
+                setup_commands:
+                - import sys
+                - sys.path.append("src")
+                rendering:
+                    show_source: false  
+        custom_templates: templates
+        watch:
+            - src/my_package
+
+
+
+#pages:
+    #- 'notes.md'
