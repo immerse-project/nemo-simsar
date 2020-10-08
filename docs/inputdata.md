@@ -64,7 +64,7 @@ If you want to document the development of a data file or provide additional fil
 ??? example "Step 2: git-lfs"
     Clone the git project onto your local host, enable git-lfs by adding a filter (don't forget to run git-lfs install on this host once), add the files, commit and push to the remote repo. For example:
     
-    ```bash
+    ``` bash
     git clone https://github.org/namespace/data-project.git
     cd data-project
     mkdir data docs util
@@ -76,6 +76,7 @@ If you want to document the development of a data file or provide additional fil
     git commit -m "adding data.nc"
     git push origin master
     ```
+    
 ???+ example "Step 3: Login to zenodo"
     You can either use your GitHub account, your OrcID or you sign up for a zenodo account. Just visit [zenodo.org/login](https://zenodo.org/login) and follow the instructions there.
 

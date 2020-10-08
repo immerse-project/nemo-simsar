@@ -24,16 +24,16 @@ The latter (collaboration) needs a more complex solution: You'll have to make su
 
 ## NEMO
 
-The NEMO framework ([nemo-ocean.eu](https://www.nemo-ocean.eu)) provides the code and tools to compile a computer program in order to simulate the ocean and its diverse components. 
+The NEMO framework ([nemo-ocean.eu](https://www.nemo-ocean.eu){: target=_blank}) provides the code and tools to compile a computer program in order to simulate the ocean and its diverse components. 
 
 Besides the physical ocean, also a sea-ice and a biogeochemical tracer module can both be included. The final program code is assembled during the compilation process and factors in additional pre-compiler choices (like model functionalities, competing parametrization and algorithms) and code modifications made by the user. The setup for such a specific executable program is called a "**configuration**". 
 
 Although the same configuration can be compiled using different compilers for different machines, the same executable can be used however to run different "**experiments**". These experiments or "runs" differ on parameter choices made in separate **namelist** files, which are evaluated during run-time. They may also start from different initial conditions (e.g. the ocean state, like temperature, salinity and current velocities) and may respond to different boundary condition data (like geothermal bottom heat or atmospheric forcing), all read from external **input data sets**.
 
-NEMO is shipped with several [build-in configurations](https://forge.ipsl.jussieu.fr/nemo/chrome/site/doc/NEMO/guide/html/configurations.html#list-of-configurations) including example parameter sets to demonstrate different kinds of application. The necessary input data files for these configurations can be downloaded from a data repository (see link in the cited NEMO documentation).
+NEMO is shipped with several [build-in configurations](https://forge.ipsl.jussieu.fr/nemo/chrome/site/doc/NEMO/guide/html/configurations.html#list-of-configurations){: target=_blank} including example parameter sets to demonstrate different kinds of application. The necessary input data files for these configurations can be downloaded from a data repository (see link in the cited NEMO documentation).
 
 !!! info "Test Cases"
-    NEMO also provides a bunch of **idealized test cases**. Each in the shape of a configuration folder they reside in a separate NEMO directory and are meant to test certain features, algorithms and functionalities of the code. The full collection can be retrieved from a separate [git repository](https://github.com/NEMO-ocean/NEMO-examples) which is open to contributions from the community.
+    NEMO also provides a bunch of **idealized test cases**. Each in the shape of a configuration folder they reside in a separate NEMO directory and are meant to test certain features, algorithms and functionalities of the code. The full collection can be retrieved from a separate [git repository](https://github.com/NEMO-ocean/NEMO-examples){: target=_blank} which is open to contributions from the community.
 
 !!! fail "Missing User Configuration Documentation"
     While the build-in configurations in NEMO are sufficiently documented, version-controlled and even the input files are linked to a permanent object identifier, there is no recommended way of keeping records of user configurations.
@@ -44,7 +44,7 @@ NEMO is shipped with several [build-in configurations](https://forge.ipsl.jussie
 
 **NEMO-SIMSAR** aims to fill the gap of documenting NEMO simulations created by users and introduces a consistent concept and provides recipes and tools for the user.
 
-The concept behind NEMO-SIMSAR does not only emphasize [univocally citable input data sets](#) but also introduces a more comprehensive definition of a [simulation package](#) and its components than the original concept of configurations and experiments stipulates. The preferred repository system for [publishing your simulation](#) with SIMSAR is git (but other platforms and protocols might be applicable, too). 
+The concept behind NEMO-SIMSAR does not only emphasize [univocally citable input data sets](inputdata.md) but also introduces a more comprehensive definition of a [simulation package](#) and its components than the original concept of configurations and experiments stipulates. The preferred repository system for [publishing your simulation](#) with SIMSAR is *git* (but other platforms and protocols might be applicable, too). 
 
 The figure below illustrates the workflow: 
 

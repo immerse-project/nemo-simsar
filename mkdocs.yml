@@ -1,7 +1,7 @@
 # Project
 site_name: nemo-simsar
 #site_url: http://127.0.0.1:8000
-site_url: http://mscheinert.github.io/simsar
+site_url: http://immerse-project.github.io/simsar
 site_author: Markus Scheinert and Lucienne Micallef
 site_description: >-
   Document and share your NEMO ocean model simulation
@@ -31,20 +31,23 @@ nav:
             - mkReadme.md
             - bundleup.md
         - 'Publish': 
-            - 'Persistent Handler (DOI)': ''
+            - publish_general.md
+            - publish_pid.md
             - 'publish via git': 'publish_git.md'
-            - 'add static webpage (git pages)': 'publish_gitpages.md'
+            - 'publish_gitpages.md'
         - 'Obtain a Simulation Package': 
-            'file exchange': 'getviacloud.md'
+            #'file exchange': 'getviacloud.md'
             'git': 'getviagit.md'
-            'HTML (git pages)': 'getvianemo.md'
-            'others': 'getothers.md'
-    - 'Reference':
-        - 'api-mkreadme.md'
-    #- '🡽 IMMERSE Project':
-    #    - 'https://immerse-ocean.eu'
-    #- '🡽 NEMO-OCEAN':
-    #    - 'https://www.nemo-ocean.eu'
+            #'HTML (git pages)': 'getvianemo.md'
+            #'others': 'getothers.md'
+    #- 'Contact': 
+    #    - contact.md
+    - Disclaimer & Privacy:
+        - disclaimerprivacy.md
+    - '🡽 IMMERSE Project':
+        - 'https://immerse-ocean.eu'
+    - '🡽 NEMO-OCEAN':
+        - 'https://www.nemo-ocean.eu'
 
 
 
@@ -72,14 +75,17 @@ extra_css:
 markdown_extensions:
   - admonition
   - attr_list
+  - def_list
   - codehilite:
       guess_lang: false
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.tasklist
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.emoji
   - pymdownx.tabbed
   - pymdownx.critic
+  - pymdownx.keys
   - toc:
       permalink: "🔗"
   - pymdownx.emoji:

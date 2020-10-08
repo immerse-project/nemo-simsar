@@ -12,7 +12,7 @@ This project is part of the [IMMERSE Project](http://immerse-ocean.eu/) funded b
 
 ## 1. Description
 
-Ocean model simulations that are based on the NEMO ocean modelling framework ([nemo-ocean.eu](https://www.nemo-ocean.eu)) consists of several components:
+Ocean model simulations that are based on the NEMO ocean modelling framework ([nemo-ocean.eu](https://www.nemo-ocean.eu){: target=_blank}) consists of several components:
 
 * The ***source code*** provided by NEMO and by the user (FORTRAN code)
 * ***Build settings*** (model components, compiler options)
@@ -36,19 +36,19 @@ The recipes and the tools in this project allows users to create a package conta
 
 Assuming you're working on a *nix like system you have to meet the following pre-requisits before running a tool or following a recipe from this project:
 
-* A working **NEMO framework** (see [nemo-ocean.eu](https://www.nemo-ocean.eu)) 
+* A working **NEMO framework** (see [nemo-ocean.eu](https://www.nemo-ocean.eu){: target=_blank}) 
 * A NEMO **simulation** to share (=configuration + experiment details)
 * **git** client is installed and working
 * A local copy of the **nemo-simsar** git project.
 * access to a remote **git server**
 * **Python3** including these standard libraries: `os`, `re`, `subprocess`, `pathlib`, `textwrap`
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):
-    * **svn** ([pypi](https://pypi.org/project/svn/) | [anaconda:main](https://anaconda.org/main/svn))
-    * **wget** ([pypi](https://pypi.org/project/wget/)| [anaconda:main](https://anaconda.org/main/wget))
-    * **GitPython** ([pypi](https://pypi.org/project/GitPython/) | [anaconda:main](https://anaconda.org/main/gitpython))
-    * **Jinja2** ([pypi](https://pypi.org/project/Jinja2/) | [anaconda:main](https://anaconda.org/main))
-    * **pycurl** ([pypi](https://pypi.org/project/pycurl/) | [anaconda:main](https://anaconda.org/main/pycurl))
-    * **netcdf4**([pypi](https://pypi.org/project/netCDF4/) | [anaconda:main](https://anaconda.org/main/netcdf4))
+    * **svn** ([pypi](https://pypi.org/project/svn/){: target=_blank} | [anaconda:main](https://anaconda.org/main/svn){: target=_blank})
+    * **wget** ([pypi](https://pypi.org/project/wget/){: target=_blank}| [anaconda:main](https://anaconda.org/main/wget){: target=_blank})
+    * **GitPython** ([pypi](https://pypi.org/project/GitPython/){: target=_blank} | [anaconda:main](https://anaconda.org/main/gitpython){: target=_blank})
+    * **Jinja2** ([pypi](https://pypi.org/project/Jinja2/){: target=_blank} | [anaconda:main](https://anaconda.org/main){: target=_blank})
+    * **pycurl** ([pypi](https://pypi.org/project/pycurl/){: target=_blank} | [anaconda:main](https://anaconda.org/main/pycurl){: target=_blank})
+    * **netcdf4**([pypi](https://pypi.org/project/netCDF4/){: target=_blank} | [anaconda:main](https://anaconda.org/main/netcdf4){: target=_blank})
 
     !!! example "EXAMPLE: Install required Python3 packages"
 

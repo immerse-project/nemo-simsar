@@ -1,204 +1,208 @@
 # Bundle up
 
+Everything is ready to bundle up? Here is a short checklist:
+
+!!! warning ""
+    * [x] Your **experiment folder** is complete, clean and ready.
+    * [x] **README.md** is ready in the experiment folder.
+    * [x] **input.ini** is present and lists all necessary files.
+    * [x] Local **git client** is installed (`git --version`)
+    * [ ] You have access to a git remote server (maybe also to some group namespace)
+    * [ ] ...
+
+The next step depends on whether your local NEMO worktree/repository is already under git control or not, though it might be under subversion control :
+
+<center>[(A) NEMO tree NOT under git control](#a-nemo-tree-not-under-git-control){: .md-button .md-button--primary }</center>
 
 
 
-## WARNING!
+<center>or (Not ready yet!)<br>[(B) NEMO tree already under git control](#){: .md-button .md-button--primary }</center>
 
-This recipe is highly preliminary and should be used with causion. It was originally developed for a NEMO repository under git control. 
-
-**Please, backup your files and commit all necessary changes BEFORE you invoke any of the commands below!**
+------
 
 
-## Environment
+
+## (A) NEMO Tree **NOT** under git control
+
+You are lucky! This is as easy as putting any existing directory under git control and pushing it to some remote repository.
+
+**Global shell variables **
+
+Examples below may use some shell variables. These variables are:
+
+!!! help ""
+    `$WORK`: Shell variable which holds the path to some scratch disk, where NEMO was checked out.
+
+### (1) Initialize git
+
+First, you have to put your configuration's folder (one level deeper than `CONFIG`/ or `cfgs/`). Let's assume we have a Configuration named "ORCA2_ICE"  we are going to share in the example below:
 
 ```bash
-# in NEMOGCM repository/worktree
-OWD=`pwd`
-CONFIG=ORCA025.L46.LIM2vp.CFCSF6.JRA.XIOS2
-EXP=cycle1
-EXP+=(cycle2 cycle3 cycle4 cycle5 cycle6)
-REPOROOT=$(git rev-parse --show-toplevel)
-# Within EXP folder:  
-#  APWD=$(pwd -P);APWD=(${APWD//\// }); EXP=${APWD[@]: -1}; CONFIG=${APWD[@]: -2:1}
-CURBRANCH=$(git symbolic-ref HEAD  | sed -e 's,.*/\(.*\),\1,')
-#CURBRANCH=${CURBRANCH%-*}    # Remove possible host-suffix from branch name
-DSTMP=$(mktemp -d)
+cd $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/
+git init
 ```
 
+Now, you'll find a new (hidden) golder, called `.git` in the configuration's folder.
 
-### 1. Prepare for Export
+### (2) Branching Off
 
-```bash
-cd CONFIG/${CONFIG}
-for zEXP in ${EXP[@]}; do
-    [ ! -f $zEXP/README.md ] && mkreadme $zEXP
-done
-cd ../..
-git add .
-git commit -m "adding README.md"
-
-for zEXP in ${EXP[@]}; do
-
-    git subtree split --prefix=CONFIG/${CONFIG} -b split
-    WTSPLIT=${DSTMP}/split
-    git worktree add ${WTSPLIT} split
-    cd ${DSTMP}/split
-```
-
-
-
-### 2. List unwanted folders
-
-remove unwanted folders (all folders except for MY_SRC, the default EXP00 and the actual experiment folder):
+The deafult branch name will be ***master***. If you want to use branches that explicitly matches the NEMO branches, you could create a new branch using the `-b` argument with the **`git checkout`** command:
 
 ```bash
-    # variable p is an array, If you want to check the content, you can do that using:
-    #  echo ${p[@]}
-    p=(EXP00 MY_SRC)
-    p+=($zEXP)
-    #zopt=();for zp in ${p[@]}; do zopt+=("-not -path \*${zp}\*"); done
-    zopt=();for zp in ${p[@]}; do zopt+=("-not -path ${zp}"); done
-    luwf=($(eval "find * -maxdepth 0 -type d ${zopt[@]}"))
+git checkout -b release-4.0
 ```
 
 
 
-### 3. Delete unwanted folders
+### (3) Ignore Patterns
 
-> Example from [stackoverflow](https://stackoverflow.com/a/32886427): To remove `DIRECTORY_NAME` completely (also from history)
->
-> ```
-> git filter-branch --index-filter 'git rm -rf --cached --ignore-unmatch DIRECTORY_NAME/' --prune-empty --tag-name-filter cat -- --all
-> git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
->
-> # Ensure all old refs are fully removed
-> rm -Rf .git/logs .git/refs/original
->
-> # Perform a garbage collection to remove commits with no refs
-> git gc --prune=all --aggressive
-> ```
->
-> 
+Surely, there are files you won't submit to a public repository, like backup files or snippets. You can use file name patterns in the `.gitignore` file to exclude them from beeing tracked. Just open an ASCII editor, e.g. *vi* and add your patterns (If you start  an entry with `**/` the pattern will work recursively). Patterns you'll need to exclude anyway, are:
 
-Using a loop over list of unwanted folders (based on the solution above):
+* `BLD/`
+* `WORK/`
+
+The `.gitignore` file is stored in the root folder of the git repository, hence:
 
 ```bash
-    for uwf in ${luwf[@]}; do
-        git filter-branch \
-            --index-filter "git rm -rf --cached --quiet --ignore-unmatch ${uwf}/" \
-            --prune-empty \
-            --tag-name-filter cat -- \
-            --all
-
-        git for-each-ref --format="%(refname)" refs/original/ | xargs -n 1 git update-ref -d
-
-        # Ensure all old refs are fully removed
-        rm -Rf .git/logs .git/refs/original
-
-        # Perform a garbage collection to remove commits with no refs
-        git gc --prune=all --aggressive
-
-    done
-
-```
-
-
-
-> ### 4.( Inport DRAKKARshare)
->
-> :warning: URL for DRAKKARshare/Template will change! will be moved to git.geomar.de.
->
-> ```bash
-> git remote add DStemplate git@gitlab.com:DRAKKARshare/Template.git
-> git fetch DStemplate
-> git merge --allow-unrelated-histories remotes/DStemplate/master
-> ```
-
-
-
-### 5. Replace EXP00 with actual experiment setup
-
-```bash
-    rm -rf EXP00
-    mv $zEXP EXP00
-    cp EXP00/README.md .
-
-   #vi README.md
-
-    # Modify as needed
-
-    git add .
-    git commit -m "update for export"
-```
-
-
-
-### 6. clone or create new CONF-CASE Project
-
------
-
-![ngit](https://img.shields.io/badge/gitlab%5fversion-%3e10.5-green.svg)
-
-```bash
-    GS=git.geomar.de
-    GN=NEMO/EXP
-    GT=(git@ :)
-
-    git clone ${GT[0]}${GS}${GT[1]}${GN}/${CONFIG}-${zEXP}.git ${DSTMP}/$CONFIG-$zEXP
-    [[ ! -d ${DSTMP}/$CONFIG-$zEXP ]] && git init ${DSTMP}/$CONFIG-$zEXP
-
-    git push ${DSTMP}/$CONFIG-$zEXP split:${CURBRANCH}-split
-    cd ${DSTMP}/$CONFIG-$zEXP
-    git checkout -b $CURBRANCH
-    git merge ${CURBRANCH}-split
-
-    git push --set-upstream ${GT[0]}${GS}${GT[1]}${GN}/${CONFIG}-${zEXP}.git $CURBRANCH
-
-    git branch -D ${CURBRANCH}-split
-    cd -
-    
+vi $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/.gitignore
 ```
 
 -----
 
-Obsolete:
+**EXAMPLE:**
 
-> 
->
-> ![ngit](img/uses-ngit-red.svg)
->
-> ```
-> GP=$(ngit sp $CONFIG-$EXP 2>/dev/null | sed -n 's/.*git : \(.*\)/\1/p;' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g;s/[\x01-\x1F\x7F]\(B//g")
-> # as private project : [[ -z ${GP} ]] && NGITVIS=private ngit cp NEMO/EXP/$CONFIG-$EXP
-> # as internal project:
-> [[ -z ${GP} ]] && ngit cp NEMO/EXP/$CONFIG-$EXP
->
-> GP=$(ngit sp $CONFIG-$EXP 2>/dev/null | sed -n 's/.*git : \(.*\)/\1/p;' | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[mGK]//g;s/[\x01-\x1F\x7F]\(B//g")
-> if [[ -n ${GP} ]]; then
-> 	git clone ${GP} ${DSTMP}/$CONFIG-$EXP
-> 	git push ${DSTMP}/$CONFIG-$EXP split:$CURBRANCH
-> 	cd ${DSTMP}/$CONFIG-$EXP
-> 	git push -u origin $CURBRANCH
-> 	
-> fi
->                                                
-> ```
->
+In the example below, the *BLD/*, *WORK/* and *EXP00/* folders are going to be ignored while all files with suffixes *\*.bak*, *\*.tar* or *\*.swp* are excluded, too.
 
+!!! tldr ".gitignore"
+	```
+	BLD
+	WORK
+	EXP00
+	**/*.bak
+	**/*.tar
+	**/*.swp
+	```
 
+-----
 
-### 7. Clean up
+After saving this file, the ignore patterns are immediately effective. **Don't forget** to add it to the commit stage:
 
 ```bash
-    cd $OWD
-    rm -r $WTSPLIT
-    git worktree prune
-    git branch -D split
-
-    
-done
-
+git add .gitignore
 ```
 
 
+
+### (4) README
+
+#### Option-a: Single Experiment
+
+If your' going to submit only one experiment folder, just copy the README.md file from your experiment into the configuration's folder before submitting. In the example below, the only experiment will be "REF":
+
+```bash
+# still in $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/
+cp REF/README.md README.md
+```
+
+
+
+#### Option-b: Multiple Experiments
+
+In the case you want to publish multiple experiments with your SImulation Package:
+
+1. Make sure you have a **README for each experiment**
+2. **Copy one of the README files into the configuration's folder** as you would for only one experiment 
+3. **Modify the title** in the README
+4. Add a list of your experiments** linked with each specific README.md file
+5. Modify the **text of the purpose** accordingly
+
+```bash
+# still in $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/
+cp REF/README.md README.md
+vi README
+```
+!!! tldr "Example README.md for Simulation Package with multiple experiments"
+    === "Original"
+
+        ``` md
+        # ORCA2_ICE-REF
+        ___
+    
+        [Purpose](#purpose)  |  [Contact](#contact)  |  [License](#license)  |  [Configuration](#configuration) | [Input Files](#input-files)  |  [Diagnostics](#diagnostics)  | [Installation](#installation)
+    
+        ____
+    
+        ## Purpose
+        
+        Reference experiment with ORCA2 and Sea Ice
+        ```
+    
+    === "Modified"
+    
+        ``` md
+        # ORCA2_ICE-*
+        ___
+    
+        [Experiments](#experiments) |  [Purpose](#purpose)  |  [Contact](#contact)  |  [License](#license)  |  [Configuration](#configuration) | [Input Files](#input-files)  |  [Diagnostics](#diagnostics)  | [Installation](#installation)
+    
+        ____
+    
+        ## Experiments
+    
+        * [REF](REF/README.md)
+        * [SENS1](SENS1/README.md)
+        * [SENS2](SENS2/README.md)
+    
+        ## Purpose
+    	Series of simple experiments with ORCA2 and Sea Ice.
+    	
+        ```
+
+
+
+### (5) Add Files
+
+Now is the time, to add some files and folders to track them with git (= files and folders which are going to be submitted to the remote repository). Please, consider adding those files **separately** using **`git add <file/folder>`** instead of using the bunch command `git add .` (adding a folder however will add it recursively). 
+
+For example , `REF/` is the experiment we want to share:
+
+```bash
+git add README.md
+git add MY_SRC
+git add REF
+git add cpp_ORCA2_ICE.fcm
+```
+
+
+
+### (6) Commit
+
+You can check which files will be tracked with **`git status`**:
+
+```bash
+git status
+```
+
+If you're happy with the result, commit them, e.g.:
+
+```bash
+git commit -m "Initial commit for experiment ORCA2_ICE-REF"
+```
+
+If you omit the *-m* option, the default editor will open and you'll have to type your commit message therein. After saving the temporary MESSAGE file and closing the editor git will proceed with finalizing the commit.
+
+### (7) Push to remote
+
+This step is part of the **publishing process**. Please follow the link or click on the buttons below:
+
+<center>[Publish: General Remarks](publish_general.html){: .md-button .md-button--primary }</center>
+
+<center>[Publish with GIT](publish_git.html){: .md-button .md-button--primary }</center>
+
+
+
+-----
+
+## (B) NEMO tree already under git control
+
+Not ready yet. Coming soon...

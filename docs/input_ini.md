@@ -12,27 +12,28 @@ The `input.ini` file is an additional file that is not part of the original NEMO
 
 ## File Format
 
-The file is a simple ASCII text file in ini format with:
+The file is a simple ASCII text file (*INI* format) with:
 
 * each section representing one input file
 * each section contains at least one key (`URL`):
-    1. The section name represents the file name as expected by NEMO (hard coded or set y namelist parameter)
+    1. The section name represents the file name as expected by NEMO (hard coded or set by namelist parameter)
     2. At least one source URL
     3. A checksum 
-    4. An indicator for the checksumtype (sha or md5)
+    4. An indicator for the type of the checksum (sha or md5)
     5. (optional) additional URLs, if available (also comma separated)
-* lines that start with a '`#` or `;`' are completely treated as comments.
+* lines that start with a '`#` or `;`' are treated as comments.
 * lines might be indented
 
 ## Example
 
 See the example/template file `docs/input.ini`:
 
-??? example "Example `input.inni`"
+!!! example "Example `input.inni`"
     ```ini
     # NEMO-simsar input file registry
     #
-    # Each NEMO input file has one entry: The SECTION name in square brackets is the file name NEMO expects (hard coded or by namelist parameter)
+    # Each NEMO input file has one entry: The SECTION name in square brackets is the 
+    # file name NEMO expects (hard coded or by namelist parameter).
     # Each section has several key=value pairs:
     #
     #       [NemoFileName.nc]

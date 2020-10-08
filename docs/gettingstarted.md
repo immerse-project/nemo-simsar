@@ -51,7 +51,7 @@ cd ~/NEMO/release-4.0/cfgs/My_Config/MyExp1
 
 ### 1.1 List input data files
 
-First, we need a list of the **required input data files** for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the **`input.def`** file. If this file does not exists yet, **please create it**. 
+First, we need a list of the **required input data files** for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the **`input.ini`** file. If this file does not exists yet, **please create it**. 
 
 You'll find more information about the file format and how to create it in the "**Citable Input Data**" section of this guide or follow these buttons for further details:
 
@@ -99,7 +99,7 @@ Publishing your Simulation Package is an essential step for the reproducibility 
 
 Instead of referring to email addresses, which can change during a scientist's career, you should link your published Simulation Package with a persistent handler for any citing, e.g. using a DOI. See the "**Persistent Handler**"  in the "**Publish**" section or follow the button below to read about the necessary steps:
 
-[Get a persistent handler (DOI)](){: .md-button  .md-button--primary style="margin:10px;" }
+[Get a persistent handler (DOI)](publish_pid.html){: .md-button  .md-button--primary style="margin:10px;" }
 
 !!! tip
     If you want to indicate a **persistent handler** (e.g. DOI) **in the README** file (and you should), try to get a **preliminary identifier** from the service provider, modify the README accordingly, then commit to the remote repository in the next step and finally register this commit with the handler provider.
@@ -115,7 +115,7 @@ To give others access to your Simulation Package you need to upload it to some r
 
 You'll find some examples on how to upload your git repository to a git server in the "**Publish**" section under:
 
-- [publish via git](){: .md-button  .md-button--primary}
+- [publish via git](publish_git.md){: .md-button  .md-button--primary}
 
 
 
