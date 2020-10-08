@@ -483,11 +483,14 @@ def get_purpose():
     #elif (CURRCONFIG == True):
         #dirName = str(pathS) + "/.includes"
     dirName = "./.includes"
+
+    if (not os.path.isdir(dirName)):
+        os.mkdir(dirName)
     #:MMS}
     
     try:
         # Create target Directory
-        os.mkdir(dirName)
+        #os.mkdir(dirName)
         purpose = input("\n\n --> What's the purpose of this configuration?:\n")
         f = open(dirName + "/.recall_purpose.txt", "w")
         f.write(purpose)
