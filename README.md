@@ -39,7 +39,6 @@ Assuming you're working on a *nix like system you have to meet the following pre
 * A working **NEMO framework** (see [nemo-ocean.eu](https://www.nemo-ocean.eu){: target=_blank}) 
 * A NEMO **simulation** to share (=configuration + experiment details)
 * **git** client is installed and working
-* A local copy of the **nemo-simsar** git project.
 * access to a remote **git server**
 * **Python3** including these standard libraries: `os`, `re`, `subprocess`, `pathlib`, `textwrap`
 * The following additional **Python3 packages** must be installed (e.g. with `pip` or `conda` or  through your favorite package manager):

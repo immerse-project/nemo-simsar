@@ -1,7 +1,7 @@
 # Project
 site_name: nemo-simsar
 #site_url: http://127.0.0.1:8000
-site_url: http://immerse-project.github.io/simsar
+site_url: https://immerse-project.github.io/nemo-simsar
 site_author: Markus Scheinert and Lucienne Micallef
 site_description: >-
   Document and share your NEMO ocean model simulation
