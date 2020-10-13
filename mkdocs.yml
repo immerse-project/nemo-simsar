@@ -42,8 +42,6 @@ nav:
             #'others': 'getothers.md'
     #- 'Contact': 
     #    - contact.md
-    - Disclaimer & Privacy:
-        - disclaimerprivacy.md
     - '🡽 IMMERSE Project':
         - 'https://immerse-ocean.eu'
     - '🡽 NEMO-OCEAN':
@@ -56,6 +54,8 @@ nav:
 # MkDocs Theme
 theme:
   name: material
+  custom_dir: overrides
+  font: false
   logo: 'docs/img/simsar_logo.png'
   favicon: 'docs/img/simsar_logo.ico'
   palette:
@@ -70,7 +70,12 @@ theme:
 
 extra_css:
     - extra.css
-    
+
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/squidfunk
+  
 # Extensions
 markdown_extensions:
   - admonition
