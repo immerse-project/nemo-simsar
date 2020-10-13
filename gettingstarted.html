@@ -1,0 +1,1002 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Document and share your NEMO ocean model simulation">
+      
+      
+        <link rel="canonical" href="https://immerse-project.github.io/nemo-simsar/gettingstarted.html">
+      
+      
+        <meta name="author" content="Markus Scheinert and Lucienne Micallef">
+      
+      <link rel="shortcut icon" href="docs/img/simsar_logo.ico">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.0.2">
+    
+    
+      
+        <title>Getting Started - nemo-simsar</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.38780c08.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.3f72e892.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#8bc34b">
+        
+      
+    
+    
+    
+      
+    
+    
+    
+      <link rel="stylesheet" href="extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-green" data-md-color-accent="deep-orange">
+      
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://immerse-project.github.io/nemo-simsar" title="nemo-simsar" class="md-header-nav__button md-logo" aria-label="nemo-simsar">
+      
+  <img src="docs/img/simsar_logo.png" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            nemo-simsar
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Getting Started
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/immerse-project/nemo-simsar" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo-simsar on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+
+  
+
+<nav class="md-tabs md-tabs--active" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  <li class="md-tabs__item">
+    
+      <a href="index.html" class="md-tabs__link">
+        HOME
+      </a>
+    
+  </li>
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="introduction.html" class="md-tabs__link md-tabs__link--active">
+          User Guide
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://immerse-ocean.eu" class="md-tabs__link">
+          🡽 IMMERSE Project
+        </a>
+      
+    </li>
+  
+
+      
+        
+  
+  
+    <li class="md-tabs__item">
+      
+        <a href="https://www.nemo-ocean.eu" class="md-tabs__link">
+          🡽 NEMO-OCEAN
+        </a>
+      
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://immerse-project.github.io/nemo-simsar" title="nemo-simsar" class="md-nav__button md-logo" aria-label="nemo-simsar">
+      
+  <img src="docs/img/simsar_logo.png" alt="logo">
+
+    </a>
+    nemo-simsar
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/immerse-project/nemo-simsar" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    nemo-simsar on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="index.html" class="md-nav__link">
+      HOME
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      User Guide
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="User Guide" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        User Guide
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="introduction.html" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Getting Started
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+    
+    <a href="gettingstarted.html" class="md-nav__link md-nav__link--active">
+      Getting Started
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare" class="md-nav__link">
+    Step-1: Prepare
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-1: Prepare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-list-input-data-files" class="md-nav__link">
+    1.1 List input data files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-other-meta-data" class="md-nav__link">
+    1.2 Other meta-data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-readme" class="md-nav__link">
+    Step-2: Create README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-git-repository" class="md-nav__link">
+    Step-3: Create git repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-publish" class="md-nav__link">
+    Step-4: Publish
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-4: Publish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-persistent-identifier" class="md-nav__link">
+    4.1 Persistent Identifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-submit-to-a-git-project-server" class="md-nav__link">
+    4.2 Submit to a Git Project Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-add-static-webpage-optional" class="md-nav__link">
+    4.3 Add Static Webpage (optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-3" type="checkbox" id="nav-2-3">
+    
+    <label class="md-nav__link" for="nav-2-3">
+      Citable Input Data
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Citable Input Data" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-3">
+        <span class="md-nav__icon md-icon"></span>
+        Citable Input Data
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="inputdata.html" class="md-nav__link">
+      How to refer to Input Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="input_ini.html" class="md-nav__link">
+      The `input.ini` File
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-4" type="checkbox" id="nav-2-4">
+    
+    <label class="md-nav__link" for="nav-2-4">
+      The Simulation Package
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="The Simulation Package" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-4">
+        <span class="md-nav__icon md-icon"></span>
+        The Simulation Package
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="simulation-meta.html" class="md-nav__link">
+      Simulation Meta Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="mkReadme.html" class="md-nav__link">
+      Create the README file with **mkReadme**
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="bundleup.html" class="md-nav__link">
+      Bundle up
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-5" type="checkbox" id="nav-2-5">
+    
+    <label class="md-nav__link" for="nav-2-5">
+      Publish
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Publish" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-5">
+        <span class="md-nav__icon md-icon"></span>
+        Publish
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="publish_general.html" class="md-nav__link">
+      General Remarks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="publish_pid.html" class="md-nav__link">
+      Persistent Handlers/Object Identifiers
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="publish_git.html" class="md-nav__link">
+      publish via git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="publish_gitpages.html" class="md-nav__link">
+      Create Static Webpage (git pages)
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2-6" type="checkbox" id="nav-2-6">
+    
+    <label class="md-nav__link" for="nav-2-6">
+      Obtain a Simulation Package
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Obtain a Simulation Package" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-6">
+        <span class="md-nav__icon md-icon"></span>
+        Obtain a Simulation Package
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="getviagit.html" class="md-nav__link">
+      git
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      🡽 IMMERSE Project
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="🡽 IMMERSE Project" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        🡽 IMMERSE Project
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://immerse-ocean.eu" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      🡽 NEMO-OCEAN
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="🡽 NEMO-OCEAN" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon"></span>
+        🡽 NEMO-OCEAN
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://www.nemo-ocean.eu" class="md-nav__link">
+      None
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-prepare" class="md-nav__link">
+    Step-1: Prepare
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-1: Prepare">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#11-list-input-data-files" class="md-nav__link">
+    1.1 List input data files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-other-meta-data" class="md-nav__link">
+    1.2 Other meta-data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-create-readme" class="md-nav__link">
+    Step-2: Create README
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-create-git-repository" class="md-nav__link">
+    Step-3: Create git repository
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-publish" class="md-nav__link">
+    Step-4: Publish
+  </a>
+  
+    <nav class="md-nav" aria-label="Step-4: Publish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-persistent-identifier" class="md-nav__link">
+    4.1 Persistent Identifier
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-submit-to-a-git-project-server" class="md-nav__link">
+    4.2 Submit to a Git Project Server
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-add-static-webpage-optional" class="md-nav__link">
+    4.3 Add Static Webpage (optional)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">🔗</a></h1>
+<div class="admonition info">
+<p class="admonition-title">NOTE: User's working environment</p>
+<p>The structure of the user's working environment can differ significantly. Hence there is no "one-click &amp; go" solution for publishing a simulation package. SIMSAR follows rather a "recipe" guided approach and provides the user with batch scripts or other tools where feasible.</p>
+</div>
+<p>A Simulation Package consists of </p>
+<ul>
+<li>the <strong>code</strong> (reference to the NEMO revision + the user code modifications), </li>
+<li>the <strong>build settings</strong> and </li>
+<li>the <strong>runtime environment</strong> for one or multiple experiments (namelists + input files). </li>
+</ul>
+<p>The package could be expanded optionally by <em>output data</em> or <em>figures</em> for evaluation (or a reference to them) as well as by <em>testing/analysis routines</em>.</p>
+<!--//<img src="img/simsar_SimulationPackage.png" alt="simsar_SimulationPackage" style="zoom:67%;" />//-->
+
+<p>In order to create and publish the simulation package, you'll need to go through these steps:</p>
+<ul>
+<li><a href="#step-1-prepare">Step-1:  Prepare</a> </li>
+<li><a href="#create-readme">Step-2: Create README</a></li>
+<li><a href="#create-git-repository">Step-3: Create git repository</a></li>
+<li><a href="#publish">Step-4: Publish</a> </li>
+</ul>
+<h2 id="step-1-prepare">Step-1: Prepare<a class="headerlink" href="#step-1-prepare" title="Permanent link">🔗</a></h2>
+<p>Assuming the path to your copy of the NEMO repository reads <code>$HOME/NEMO/release-4.0</code>, let's go into the respective experiment folder of the simulation you want to publish (e.g. experiment <code>MyExp1</code> under configuration <code>My_Config</code>):</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/NEMO/release-4.0/cfgs/My_Config/MyExp1
+</code></pre></div>
+<div class="admonition caution">
+<p class="admonition-title">check in latest revision</p>
+<p>It is important that when using svn or git the latest changes have been committed to the version control system:</p>
+<div class="tabbed-set" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><label for="__tabbed_1_1">git</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>git add .
+git commit -m &quot;last checkin before creating README&quot;
+</code></pre></div>
+</div>
+<input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><label for="__tabbed_1_2">svn</label><div class="tabbed-content">
+<div class="highlight"><pre><span></span><code>svn add .
+</code></pre></div>
+</div>
+</div>
+</div>
+<h3 id="11-list-input-data-files">1.1 List input data files<a class="headerlink" href="#11-list-input-data-files" title="Permanent link">🔗</a></h3>
+<p>First, we need a list of the <strong>required input data files</strong> for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the <strong><code>input.ini</code></strong> file. If this file does not exists yet, <strong>please create it</strong>. </p>
+<p>You'll find more information about the file format and how to create it in the "<strong>Citable Input Data</strong>" section of this guide or follow these buttons for further details:</p>
+<p><a class="md-button md-button--primary" href="inputdata.html" style="margin:10px;">How to refer to Input Data</a> <a class="md-button md-button--primary" href="input_ini.html" style="margin:10px;">The "input.ini" file</a></p>
+<div class="admonition danger">
+<p class="admonition-title">Important</p>
+<p>Make sure, that the sources in the <code>input.def</code> files (the URLs) are publicly accessible (or grant permissions respectively).</p>
+</div>
+<h3 id="12-other-meta-data">1.2 Other meta-data<a class="headerlink" href="#12-other-meta-data" title="Permanent link">🔗</a></h3>
+<p>Meta-data is an essential part of a documentation because it summarizes the most important basic characteristics of a simulation as well as its special features. Some of this information can be identified automatically while other information requires user input, like the textual description of the purpose of a simulation. </p>
+<p>Please, follow the button below to read about which meta information will be needed (from the "<strong>The Simulation Package</strong>" section):</p>
+<p><a class="md-button md-button--primary" href="simulation-meta.html" style="margin:10px;">Simulation Meta Data</a>  </p>
+<h2 id="step-2-create-readme">Step-2: Create README<a class="headerlink" href="#step-2-create-readme" title="Permanent link">🔗</a></h2>
+<p>The meta-information from the preparation step is now assembled in one single document: the <strong>README</strong> file. This document serves both as front-page for the git repository and as static web page (if enabled). It will give the reader a brief overview of the simulation, a list of requirements to re-run the simulation and how to obtain the code and input files.</p>
+<p>There is a python script for assistance. Just run the script <strong>mkReadme</strong> from the SIMSAR package and follow the instructions from the user dialog. Click on the following button to read more about the process:</p>
+<p><a class="md-button md-button--primary" href="mkReadme.html" style="margin:10px;">Create a README (mkReadme)</a>  </p>
+<h2 id="step-3-create-git-repository">Step-3: Create git repository<a class="headerlink" href="#step-3-create-git-repository" title="Permanent link">🔗</a></h2>
+<p>The Simulation Package will be stored as a <em>git repository</em>. During this step you can review the contents of the repository before it will be uploaded in the next step. Depending on your working environment and whether the directory is already under version control, there are slightly different ways of how to proceed. Please, click on the button below to read about how to bundle up from the "<strong>The Simulation Package</strong>" section:</p>
+<p><a class="md-button md-button--primary" href="bundleup.html" style="margin:10px;">Bundle up</a></p>
+<h2 id="step-4-publish">Step-4: Publish<a class="headerlink" href="#step-4-publish" title="Permanent link">🔗</a></h2>
+<p>Publishing your Simulation Package is an essential step for the reproducibility of scientific findings. But you should also ensure that it's easy to acknowledge your contribution by referring to your work.  </p>
+<h3 id="41-persistent-identifier">4.1 Persistent Identifier<a class="headerlink" href="#41-persistent-identifier" title="Permanent link">🔗</a></h3>
+<p>Instead of referring to email addresses, which can change during a scientist's career, you should link your published Simulation Package with a persistent handler for any citing, e.g. using a DOI. See the "<strong>Persistent Handler</strong>"  in the "<strong>Publish</strong>" section or follow the button below to read about the necessary steps:</p>
+<p><a class="md-button md-button--primary" href="publish_pid.html" style="margin:10px;">Get a persistent handler (DOI)</a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you want to indicate a <strong>persistent handler</strong> (e.g. DOI) <strong>in the README</strong> file (and you should), try to get a <strong>preliminary identifier</strong> from the service provider, modify the README accordingly, then commit to the remote repository in the next step and finally register this commit with the handler provider.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><em>If you do not want to register a persistent handler for your simulation you can skip this step, of course.</em></p>
+</div>
+<h3 id="42-submit-to-a-git-project-server">4.2 Submit to a Git Project Server<a class="headerlink" href="#42-submit-to-a-git-project-server" title="Permanent link">🔗</a></h3>
+<p>To give others access to your Simulation Package you need to upload it to some remote git server either as a <strong>public</strong> (recommended) <strong>or private</strong> project. If the project settings allow cloning/forking and so-called merge requests, you can open your Simulation Package for others to contribute to the development. However, most free service providers require the project to be public anyway (or some kind of payed membership) in order to use advanced features, like git pages (for the static web page). </p>
+<p>You'll find some examples on how to upload your git repository to a git server in the "<strong>Publish</strong>" section under:</p>
+<ul>
+<li><a class="md-button md-button--primary" href="publish_git.html">publish via git</a></li>
+</ul>
+<h3 id="43-add-static-webpage-optional">4.3 Add Static Webpage (optional)<a class="headerlink" href="#43-add-static-webpage-optional" title="Permanent link">🔗</a></h3>
+<p>Not everybody is familiar with git. And in particular, if your intension is just to provide the information for reference (e.g. for scientific publications) and less for real collaboration, you may want to use a static web page instead of a git repository. Some git hosts provide a nice feature in this regard: <strong>git pages</strong>. This feature  allows you to create a static web page from the existing files using a static web content generator as part of a continuous integration technique.</p>
+<p>Follow the button below to read more about static webpages in the "<strong>Publish</strong>" section:</p>
+<ul>
+<li><a class="md-button md-button--primary" href="">add static webpage</a></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This static web page version can also be used with the "unsupported configuration" switch <code>makenemo -u</code> to import this simulation into NEMO without using git.</p>
+</div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="introduction.html" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Introduction
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="inputdata.html" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                How to refer to Input Data
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Markus Scheinert
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      <div class="md-footer-disclaimer">
+      <a href="disclaimer.html">Disclaimer</a><br>
+      <a href="privacy.html">Privacy</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.77e55a48.min.js"></script>
+      <script src="assets/javascripts/bundle.9554a270.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ['navigation.tabs', 'search.highlight'],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.4ac00218.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

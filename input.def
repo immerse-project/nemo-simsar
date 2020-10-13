@@ -1,0 +1,23 @@
+#--------------------------------------------------------------------------------------
+# NEMO Input File Definition
+#
+# <NEMO-FileName>, <'DOI|Reference SHA256=xxxx...'>, <URI>[,<URI>[,...]]
+#
+#    Each 'Reference' can also contain a SHA256-hash for verifying the file. This entry
+#    is separated with spaces and has the preceding key-word SHA256= without any blanks
+#
+#    You can use hash character (#) to comment the rest of the line out
+#    Long lines can be split by backslashes (\); trailing comments (#) are allowed.
+#
+#--------------------------------------------------------------------------------------
+# <NEMO-FileName>,  <'DOI|Reference SHA256=xxxx...'>,  <URI>[,<URI>[,...]]
+
+coordinates.nc,                SHA256=288b021a8595efeee8de7c4fb665d3037bd356a72ca13e591bb81acc5c3ceeb5 ,\
+                               https://data.myserver.org/ORCA025/coordinates__3.6.0_ORCA025_v1.0.1.nc
+
+reshape_jra55_orca025_bilin.nc, SHA256=645de13bb1cbe652c1c2fa3913523d42adf4ec04fd3f55f20766a43abbd00e50 ,\
+                                git@git.myserver.org:ORCA025/reshape_jra.git/reshape_jra_bilin__v1.0.1.nc
+
+reshape_jra55_orca025_bicub.nc, SHA256=91edfbc233a48d6aaa266d7aca71665f420da9957d3d124e9864e91e0012e10f ,\
+                                git@git.myserver.org:ORCA025/reshape_jra.git/reshape_jra_bicub__v1.0.1.nc
+
