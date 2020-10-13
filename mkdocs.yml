@@ -71,10 +71,6 @@ theme:
 extra_css:
     - extra.css
 
-extra:
-  social:
-    - icon: fontawesome/brands/twitter
-      link: https://twitter.com/squidfunk
   
 # Extensions
 markdown_extensions:
