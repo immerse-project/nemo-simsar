@@ -1622,23 +1622,24 @@ def check_prereq():
     else:
         errmsg("SSH not found")
         
+    '''
     curl_X = pycurl.version
     if len(curl_X ) > 0 :
         sucssmsg("CURL found")
     else:
         errmsg("CURL not found")
         cwflag = cwflag + 1
-    
+    '''
     wget_X = wget.__version__
     if len(wget_X ) > 0 :
         sucssmsg("WGET found")
     else:
         errmsg("WGET not found")
         cwflag = cwflag + 1
-    
+    '''
     if (cwflag > 0):
         errmsg("Neither CURL nor WGET was found. Abort")
-        
+    '''    
     m4_X = os.system('m4 --version')
     if len(str(m4_X)) > 0 :
         sucssmsg("m4 found")
