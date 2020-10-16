@@ -6,11 +6,11 @@ Created on Thu Oct 08 13:07:20 2020
 @author: luciennemicallef, markusscheinert
 """
 
+
 import git
 import os
 import re
 from jinja2 import Template
-import pycurl
 import wget
 import subprocess
 import pathlib
