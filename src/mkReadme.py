@@ -37,11 +37,7 @@ ans = mk.prep_note()
 #
 #call the main function
 
-if(ans == 'y') and (mk.exp == ""):
-#    print("Exp 1 ", exp)
-    mk.main() #if script is stored in the root
-
-elif(ans == 'y') and (mk.exp != ""):
+if(ans == 'y') and (mk.exp != ""):
 #    print("Exp 2 ", exp)
     mk.mainconfig() #if script is stored in a particular configuration
     
