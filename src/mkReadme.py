@@ -5,39 +5,39 @@ Created on Thu Oct 15 08:41:51 2020
 
 @author: luciennemicallef, markusscheinert
 """
-
+import os
+from scriptMK import ReadmeScript
+from scriptMK import color
 import scriptMK as mk
 
+ReadmeC_ = ReadmeScript()#create an instance for class ReadmeScript()
+
+
 scriptLoc=""
-scriptLoc = mk.checkScriptLocation()
-#print("script loc ", scriptLoc)
+scriptLoc = ReadmeC_.checkScriptLocation()
 if scriptLoc != None:
-    mk.exp = scriptLoc
+    ReadmeC_.exp = scriptLoc
 else:
-    mk.exp=""
+    ReadmeC_.exp=""
 #MMS run : variable holding the experiment's name.
 run=""
 
-mk.getNemoConfig()
-
-mk.color()
+color()
 #
 mk.hr()
-mk.center("Technical Details")
+mk.center("Technical Documentation")
 mk.hr()
 #
-mk.check_gitorsvn()
+ReadmeC_.check_gitorsvn()
 #
-mk.get_zGITNMSPC()
+ReadmeC_.get_zGITNMSPC()
 #
-#    #
-mk.check_prereq()
+#    
+ReadmeC_.check_prereq()
 #
 ans = mk.prep_note()
 #
 #call the main function
-
-if(ans == 'y') and (mk.exp != ""):
-#    print("Exp 2 ", exp)
-    mk.mainconfig() #if script is stored in a particular configuration
+if(ans == 'y') and (ReadmeC_.exp != ""):
+    ReadmeC_.mainconfig() #if script is stored in a particular configuration
     
