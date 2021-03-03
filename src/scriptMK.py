@@ -885,7 +885,7 @@ class ReadmeScript:
      
     
     def get_hgridpt(self):
-        '''This function will return the value corresponding to the hortizonatal grid type from namelist_cfg file. Returns unknown if value is not available'''
+        '''This function will return the value corresponding to the horizontal grid type from namelist_cfg file. Returns unknown if value is not available'''
         
         stringToMatch = 'namcfg'
         defaultx = ""
@@ -1280,7 +1280,7 @@ class ReadmeScript:
             errmsg("It seems, we are not in a configuration sub-folder of NEMOGCM/CONFIG. I'm lost. " + c.BOLD + "Please run this script within a configuration folder!" + c.NORMAL)
         
     def check_prereq(self):
-        '''This function will check some prerequisits, like git vs svn, curl & wget,... '''
+        '''This function will check some prerequisites, like git vs svn, curl & wget,... '''
         #MMS:{
         #'''This function will check that EXP00 or EXPREF directory is present in the current file structure '''
         #if(EXPref != "EXP00") and (EXPref != "EXPREF"):
@@ -1632,7 +1632,7 @@ Note: *origin/HEAD* in the output listing is not a branch in its own but points 
 ##-- end of class ReadmeScript ---#
 
 def center(text):            
-    '''Centers the text to the midddle of the screen'''
+    '''Centers the text to the middle of the screen'''
     command = ['tput', 'cols']
     width = int(subprocess.check_output(command))
     c = text.center(width)
@@ -1674,7 +1674,7 @@ def trim(text):
 
 
 def prep_note(): 
-        '''The purpose of this function is to display a list of prerequistes to successfully render a readme file'''
+        '''The purpose of this function is to display a list of prerequisites  to successfully render a readme file'''
         uName = os.uname().nodename
         uName = str(uName)
         print("\n")
