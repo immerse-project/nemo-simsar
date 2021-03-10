@@ -42,7 +42,7 @@ cd $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/
 git init
 ```
 
-Now, you'll find a new (hidden) golder, called `.git` in the configuration's folder.
+Now, you'll find a new (hidden) folder, called `.git` in the configuration's folder.
 
 ### (2) Branching Off
 
@@ -97,7 +97,7 @@ git add .gitignore
 
 #### Option-a: Single Experiment
 
-If your' going to submit only one experiment folder, just copy the README.md file from your experiment into the configuration's folder before submitting. In the example below, the only experiment will be "REF":
+If you're going to submit only one experiment folder, just copy the README.md file from your experiment into the configuration's folder before submitting. In the example below, the only experiment will be "REF":
 
 ```bash
 # still in $WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/
