@@ -26,10 +26,10 @@ In order to create and publish the simulation package, you'll need to go through
 
 ## Step-1: Prepare
 
-Assuming the path to your copy of the NEMO repository reads `$HOME/NEMO/release-4.0`, let's go into the respective experiment folder of the simulation you want to publish (e.g. experiment `MyExp1` under configuration `My_Config`):
+Assuming the path to your copy of the NEMO repository reads `$WORK/NEMO/release-4.0` and the configuration is `ORCA2_ICE` , let's go into the respective experiment folder of the simulation you want to publish (e.g. `REF`):
 
 ```bash
-cd ~/NEMO/release-4.0/cfgs/My_Config/MyExp1
+cd ~$WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/REF
 ```
 
 !!! caution "check in latest revision"
@@ -51,7 +51,7 @@ cd ~/NEMO/release-4.0/cfgs/My_Config/MyExp1
 
 ### 1.1 List input data files
 
-First, we need a list of the **required input data files** for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the **`input.ini`** file. If this file does not exists yet, **please create it**. 
+First, we need a list of the **required input data files** for your simulation together with some detailed meta-data, like sources, references and check-sums. SIMSAR expects this list in a special file, the **`input.ini`** file. If this file does not exists yet, **please create it and save in root**. 
 
 You'll find more information about the file format and how to create it in the "**Citable Input Data**" section of this guide or follow these buttons for further details:
 
@@ -121,7 +121,7 @@ You'll find some examples on how to upload your git repository to a git server i
 
 ### 4.3 Add Static Webpage (optional)
 
-Not everybody is familiar with git. And in particular, if your intension is just to provide the information for reference (e.g. for scientific publications) and less for real collaboration, you may want to use a static web page instead of a git repository. Some git hosts provide a nice feature in this regard: **git pages**. This feature  allows you to create a static web page from the existing files using a static web content generator as part of a continuous integration technique.
+Not everybody is familiar with git. And in particular, if your intention is just to provide the information for reference (e.g. for scientific publications) and less for real collaboration, you may want to use a static web page instead of a git repository. Some git hosts provide a nice feature in this regard: **git pages**. This feature  allows you to create a static web page from the existing files using a static web content generator as part of a continuous integration technique.
 
 Follow the button below to read more about static webpages in the "**Publish**" section:
 
