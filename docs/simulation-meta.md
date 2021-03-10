@@ -61,7 +61,7 @@ In response to the [question](#question) in the first paragraph, here is an over
 |  3   | run-time environment | FORTRAN namelists, XIOS XML,                                 | README, EXP folder |
 |  4   | evaluation data      | graphics, time series, 2D fields                             | DIAGS/             |
 
-Mot of the meta-data can be gathered using the **`mkReadme`** script provided by SIMSAR. This script is run in the experiment folder and expects little input from the user while the majority is retrieved automatically. See the section [Create the README file with mkReadme](mkReadme.md) for instructions how to invoke the script or click on the button below.
+Most of the meta-data can be gathered using the **`mkReadme`** script provided by SIMSAR. This script is run in the experiment folder and expects little input from the user while the majority is retrieved automatically. See the section [Create the README file with mkReadme](mkReadme.md) for instructions how to invoke the script or click on the button below.
 
 &nbsp;
 
