@@ -8,18 +8,18 @@
 
 !!! tip "Experiment Folder"
     Please, be aware, that currently **mkReadme** expects you to be wihtin the NEMO repository tree.
-    If your **experiment folder** is outside of e.g. `NEMO/cfgs/WhateverConfig/YourEXP`, please consider
+    If your **experiment folder** is outside of e.g. `~$WORK/NEMO/release-4.0/cfgs/ORCA2_ICE/REF`, please consider
     finding a work-around by e.g. copying the necessary files temporarily into the NEMO repository tree 
     (no need to copy the huge input data files, `input.ini` will be sufficient).
 ​    
 
-1. Go into the folder of the exxperiment you want to publish.
+1. Go into the folder of the experiment you want to publish.
 2. Run **`mkReadme`** and provide input when asked :
    1. Confirm with >**y**<  when you're ready and prepared (see list on the screen)
    2. The ascertained name of the configuration and experiment are printed on screen for controlling purposes only
-   3. Your're asked for your full name (given name and family name).  
+   3. You're asked for your full name (given name and family name). If using GIT the full name is automatically extracted from .git config file
       Confirm with >RETURN<
-   4. You're asked for your email address (both will apear as "Contact" on the README page).  
+   4. You're asked for your email address (both will apear as "Contact" on the README page). If using GIT the email is automatically extracted from .git config file
       Confirm with >RETURN<
    5. Now type in a short notice on the purpose of the experiment; You can modify an existing text, if you have invoked the script before  
       Confirm with >RETURN<
@@ -45,7 +45,7 @@
        Confirm with >RETURN<
    11. Finaly, you can type in a list of passive tracers, if necessary.  
        Confirm with >RETURN<
-   12. Your README.md file ist written.
+   12. Your README.md file is written.
 3. Load the README.md in a Markdown Viewer or in some ASCII editor to check the information therein.
 
 
